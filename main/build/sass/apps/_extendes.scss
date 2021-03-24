@@ -1,0 +1,11 @@
+.transition{
+    transition: all .3s;
+}
+.clear{
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+.nowrap{white-space: nowrap;}

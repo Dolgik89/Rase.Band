@@ -1,0 +1,39 @@
+//Retina images
+@mixin background-image-retina($file, $type, $width, $height, $repeat: false) {
+//    @if not $repeat {
+//        $repeat: no-repeat;
+//    }
+//    background-image: url('../images/' + $file + '.' + $type);
+//    background-repeat: $repeat;
+//    background-size: $width $height;
+//    @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+//        & {background-image: url('../images/' + $file + '@2x.' + $type);}
+//    }
+}
+//Retina sprites
+@mixin background-sprite-retina($name, $spriteName){
+//    $icons-normal: sprite-map('sprites/' + $spriteName + '/*.png');
+//    $icons-retina: sprite-map('sprites/' + $spriteName + '2x/*.png');
+//    $auto-height:auto;
+//    background-repeat: no-repeat;
+//    background-image: sprite-url($icons-normal);
+//    height:image-height(sprite-file($icons-normal, $name));
+//    width: image-width(sprite-file($icons-normal, $name));
+//    background-position: sprite-position($icons-normal,$name);
+//
+//    @media
+//    only screen and (-webkit-min-device-pixel-ratio: 2),
+//    only screen and ( min--moz-device-pixel-ratio: 2),
+//    only screen and ( -o-min-device-pixel-ratio: 2/1),
+//    only screen and ( min-device-pixel-ratio: 2),
+//    only screen and ( min-resolution: 192dpi),
+//    only screen and ( min-resolution: 2dppx){
+//        background-image: sprite-url($icons-retina);
+//        background-position: 0 round(nth(sprite-position($icons-retina, $name), 2) / 2);
+//        height:round(image-height(sprite-file($icons-retina, $name)) / 2);
+//        width: round(image-width(sprite-file($icons-retina, $name)) /2 );
+//        background-repeat: no-repeat;
+//        $double-width:ceil(image-width(sprite-path($icons-retina)) / 2);
+//        background-size: $double-width $auto-height;
+//    }
+}

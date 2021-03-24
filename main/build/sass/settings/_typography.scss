@@ -1,0 +1,41 @@
+//Google font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400&display=swap');
+
+//Fonts
+$font-family__content_text:   'Open Sans', sans-serif;
+$font-family__content_title:  'Epilogue', sans-serif;
+$font-family__footer:         'Roboto', sans-serif;
+
+
+
+$font-weight_regular:         400;
+$font-weight_bold:            700;
+
+//Font size
+$font-size_small:             16px;
+$font-size_medium:            18px;
+$font-size_big:               32px;
+$font-size_large:             42px;
+
+$font-size__header:           15px;
+$font-size__header__menu:     15px;
+$font-size__header__button:   15px;
+$font-size__content_text:     $font-size_medium;
+$font-size__page_title:       $font-size_large;
+$font-size__section_title:    $font-size-big;
+$font-size__button_middle:    20px;
+$font-size__button_small:     $font-size_small;
+$font-size__form_input:       $font-size_medium;
+
+
+//Font color
+$font-color__content_text:    $gray-dark;
+$font-color__page_title:      $blue-dark;
+$font-color__block_title:     $blue-dark;
+$font-color__form_input:      $blue-dark;
+
+//Line heights
+$line-height__content_text:   1.5;
+$line-height__title:          1.19;

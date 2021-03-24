@@ -1,0 +1,17 @@
+//Default
+:focus{outline: none;}
+html, body{
+    height: 100%;
+    min-height: 100%;
+}
+body{
+    background: $background__body;
+    font: {
+        family: $font-family__content_text;
+        size:  $font-size__content_text;
+        weight: $font-weight_regular;
+    };
+
+    color:      $font-color__content_text;
+
+}
