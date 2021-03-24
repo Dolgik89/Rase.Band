@@ -7,11 +7,15 @@ html, body{
 body{
     background: $background__body;
     font: {
-        family: $font-family__content_text;
-        size:  $font-size__content_text;
+        family: $font-family__content__text;
+        size:  $font-size__content__text;
         weight: $font-weight_regular;
     };
-
-    color:      $font-color__content_text;
-
+    color:      $font-color__content__text;
+    line-height: $line-height__content__text;
+}
+.site-wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100%;
 }

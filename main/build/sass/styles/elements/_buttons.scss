@@ -1,0 +1,45 @@
+.button {
+	display: inline-block;
+	text-decoration: none;
+	white-space: nowrap;
+	border: {
+		width: 2px;
+		style: solid;
+		radius: $border-radius_standard;
+	}
+	font: {
+		family: $font-family__content__text;
+		weight: $font-weight_bold;
+	}
+	&_size {
+		&_small {
+			padding: 0 20px;
+			height: 35px;
+			font-size: $font-size__button_small;
+			&:not(button):not([type="submit"]) {
+				line-height: 31px;
+			}
+		}
+	}
+	&_color {
+		&_primary {
+			background: $button_color_primary;
+			border-color: $button_color_primary;
+			color: $white;
+			transition: box-shadow $transition_speed;
+			&:hover {
+				box-shadow: $box-shadow_button;
+			}
+		}
+		&_transparent {
+			background: transparent;
+			border-color: $button_color_transparent;
+			color: $button_color_transparent;
+			transition: border-color $transition_speed, color $transition_speed;
+			&:hover {
+				border-color: $button_color_primary;
+				color: $button_color_primary;
+			}
+		}
+	}
+}

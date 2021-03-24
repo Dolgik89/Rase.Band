@@ -1,0 +1,85 @@
+$header__left-gutter: 30px;
+.header {
+	flex: 0 0 88px;
+	width: 100%;
+	padding: 26px 0;
+	background: $white;
+	box-shadow: $box-shadow_primary;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	&__inner {
+		display: flex;
+		margin: 0 auto;
+		padding: 0 10px;
+		max-width: $max-width__content;
+		justify-content: space-between;
+		align-items: center;
+	}
+	//Logo
+	&__logo {
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+	//Menu
+	&__menu {
+		display: flex;
+		margin-left: auto;
+		align-items: center;
+		//Call button
+		&__call-button {
+			margin-left: $header__left-gutter;
+			color: $font-color__header__menu;
+			white-space: nowrap;
+			font: {
+				size: $font-size__header__menu;
+				weight: $font-weight_bold;
+			}
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+			&:before {
+				content: '';
+				display: inline-block;
+				margin-right: 7px;
+				width: 20px;
+				height: 20px;
+				background: url(../images/icon_phone.svg) center center/100% 100% no-repeat;
+				vertical-align: middle;
+			}
+		}
+		//Menu items
+		&__list {
+			display: flex;
+			margin-left: $header__left-gutter;
+		}
+		&__item {
+			margin-left: $header__left-gutter/2;
+			&:first-child {
+				margin-left: 0;
+			}
+			a {
+				color: $font-color__header__menu;
+				font-size: $font-size__header__menu;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.button {
+			margin-left: $header__left-gutter;
+		}
+	}
+	&__mobile-button {
+		display: none;
+		@media screen and (max-width: 1024px){
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+.content {
+	flex: 1 1 auto;
+	&__inner {
+		padding: 0 $padding__content;
+		margin: 0 auto;
+		max-width: $max-width__content;
+	}
+}

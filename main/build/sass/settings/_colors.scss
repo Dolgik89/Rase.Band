@@ -1,7 +1,7 @@
 $white:         white;
 $black:         black;
 $gray-light:    #F9FAFC;
-$gray:          #7E8183;
+$gray:          #909090;
 $gray-dark:     #63718E;
 $blue-light:    #E8F8FF;
 $blue:          #286DBD;
@@ -11,9 +11,10 @@ $purple:        #C774EE;
 $red:           #D95271;
 $yellow:        #FFDA44;
 
+//Body
 $background__body:      $white;
 $background__footer:    $white;
 
-$box-shadow_primary:    0 2px 16px rgba(32, 108, 164, 0.16);
-$box-shadow_input:      0 1px 3px rgba(5, 41, 83, 0.14);
-$box-shadow_button:     0 5px 10px rgba(76, 174, 80, 0.3);
+//Buttons
+$button_color_primary:      $purple;
+$button_color_transparent:  $gray-dark;

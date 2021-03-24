@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-{% set Head = { title: 'Title 1' } %}{% include 'layout/_head.njk' %}
+{% set Head = { title: 'Front test' } %}
+{% include 'layout/_head.njk' %}
 <body>
-
+<div class="site-wrap">
+    {% include 'layout/_header.njk' %}
+    {% include 'pages/_home.njk' %}
+    {% include 'layout/_footer.njk' %}
+</div>
+<script src="js/bundle.min.js"></script>
 </body>
 </html>

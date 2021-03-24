@@ -34,7 +34,7 @@ gulp.task('sass', function(done){
     gulp.src(paths.styles.scss + '/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gcmq())
-        .pipe(clear())
+        .pipe(clear({processImport: false}))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
@@ -59,8 +59,9 @@ gulp.task('nunjucks', function(done){
     done();
 })
 
-gulp.task('watch', function() {
+gulp.task('watch', function(done) {
     gulp.watch(paths.styles.scss + '**/*.scss', gulp.series('sass'));
     gulp.watch(paths.js.build + '**/*.js', gulp.series('bundleJS'));
     gulp.watch(paths.templates.njk + '**/*.njk', gulp.series('nunjucks'));
+    done();
 });

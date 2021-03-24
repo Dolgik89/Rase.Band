@@ -1,0 +1,76 @@
+<footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__col footer__col_about">
+            <div class="footer__contacts">
+                <a href="#" class="footer__contacts__phone">+49(621) <b>53399112</b></a>
+                Call us!
+            </div>
+            <div class="footer__ratings">
+                <div class="footer__ratings__stars">
+                    <span class="star star_full"></span>
+                    <span class="star star_full"></span>
+                    <span class="star star_full"></span>
+                    <span class="star star_full"></span>
+                    <span class="star star_half"></span>
+                </div>
+                <div class="footer__ratings__points">4.5<span>/</span>5</div>
+            </div>
+            <select id="" class="footer__dropdown chosen-select">
+                <option value="">Info</option>
+                <option value="">Geld-Zurück-Garantie</option>
+                <option value="">Datenschutzerklärung</option>
+                <option value="">Revisionen</option>
+                <option value="">Rabattpolitik</option>
+            </select>
+        </div>
+        <nav class="footer__col footer__col_menu">
+{# --------------- Footer menu ---------------- #}
+            {% set footer_menu = [
+                ['About', '#'],
+                ['Blog', '#'],
+                ['Product', '#'],
+                ['How it works', '#'],
+                ['FAQ', '#'],
+                ['Clients', '#'],
+                ['Contact', '#'],
+                ['Reviews', '#']
+            ] %}
+            <ul class="footer__menu">
+                {% for page, link in footer_menu %}
+                <li class="footer__menu__item"><a href="{{ link }}">{{ page }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+{# --------------- Social menu ---------------- #}
+        <div class="footer__col footer__col__social">
+            <ul class="footer__social-links">
+                {% set social_networks = [
+                    ['facebook', '#'],
+                    ['instagram', '#'],
+                    ['youtube', '#'],
+                    ['pinterest', '#']
+                ] %}
+                {% for name, link in social_networks %}
+                <li class="footer__social-links__item">
+                    <a href="{{ link }}"><img src="images/social_{{ name }}.svg" alt="{{ name | capitalize }}"></a>
+                </li>
+                {% endfor %}
+            </ul>
+{# --------------- Payments systems ---------------- #}
+            <ul class="footer__payments">
+                <li class="footer__payments__item">
+                    <img src="images/pay_visa.svg" alt="Visa">
+                </li>
+                <li class="footer__payments__item">
+                    <img src="images/pay_master.svg" alt="Mastercard">
+                </li>
+            </ul>
+            <div class="footer__protect">
+                <img src="images/dmca_protected.svg" alt="DMCA Protected">
+            </div>
+        </div>
+        <div class="footer__col footer__col_width_full">
+            <p class="footer__copyright">&copy; Copyright 2016-2021</p>
+        </div>
+    </div>
+</footer>
