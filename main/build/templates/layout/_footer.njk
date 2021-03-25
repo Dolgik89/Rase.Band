@@ -1,19 +1,19 @@
 <footer class="footer">
     <div class="footer__inner">
-        <div class="footer__col footer__col_about">
+        <div class="footer__col footer__col__about">
             <div class="footer__contacts">
-                <a href="#" class="footer__contacts__phone">+49(621) <b>53399112</b></a>
+                <a href="#" class="footer__contacts__phone">+49(621) <b>53399112</b></a><br>
                 Call us!
             </div>
-            <div class="footer__ratings">
-                <div class="footer__ratings__stars">
-                    <span class="star star_full"></span>
-                    <span class="star star_full"></span>
-                    <span class="star star_full"></span>
-                    <span class="star star_full"></span>
-                    <span class="star star_half"></span>
+            <div class="footer__rating">
+                <div class="footer__rating__stars">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star star_half"></span>{# star_empty class for dis star #}
                 </div>
-                <div class="footer__ratings__points">4.5<span>/</span>5</div>
+                <div class="footer__rating__points">4,5<span>/</span>5</div>
             </div>
             <select id="" class="footer__dropdown chosen-select">
                 <option value="">Info</option>
@@ -23,16 +23,16 @@
                 <option value="">Rabattpolitik</option>
             </select>
         </div>
-        <nav class="footer__col footer__col_menu">
+        <nav class="footer__col footer__col__menu">
 {# --------------- Footer menu ---------------- #}
             {% set footer_menu = [
                 ['About', '#'],
-                ['Blog', '#'],
                 ['Product', '#'],
-                ['How it works', '#'],
                 ['FAQ', '#'],
-                ['Clients', '#'],
                 ['Contact', '#'],
+                ['Blog', '#'],
+                ['How it works', '#'],
+                ['Clients', '#'],
                 ['Reviews', '#']
             ] %}
             <ul class="footer__menu">

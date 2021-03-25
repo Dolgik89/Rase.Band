@@ -4,33 +4,25 @@
             <img src="images/logo.svg" alt="Product">
         </a>
         <nav class="header__menu">
-            <div class="search-form">
-                <form action="">
-                    <input type="search" class="search-form__input">
-                    <button class="search-form__button action__button_search"></button>
-                </form>
-            </div>
+            {% include '../common.blocks/_search-form.njk' %}
             <a href="#" class="header__menu__call-button">Call us</a>
+            {% set header_menu = [
+                ['About', '#'],
+                ['Product', '#'],
+                ['FAQ', '#'],
+                ['Contact', '#']
+            ] %}
             <ul class="header__menu__list">
+                {% for page, link in header_menu %}
                 <li class="header__menu__item">
-                    <a href="#">About</a>
+                    <a href="{{ link }}">{{ page }}</a>
                 </li>
-                <li class="header__menu__item">
-                    <a href="#">Product</a>
-                </li>
-                <li class="header__menu__item">
-                    <a href="#">FAQ</a>
-                </li>
-                <li class="header__menu__item">
-                    <a href="#">Contact</a>
-                </li>
+                {% endfor %}
             </ul>
             <a href="#" class="button button_size_small button_color_primary">Download</a>
             <a href="#" class="button button_size_small button_color_transparent">Sign up</a>
         </nav>
         <button class="header__mobile-button">
-            <span></span>
-            <span></span>
             <span></span>
         </button>
     </div>

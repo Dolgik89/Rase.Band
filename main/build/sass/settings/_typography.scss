@@ -17,7 +17,7 @@ $font-size_medium:              18px;
 $font-size_big:                 32px;
 $font-size_large:               42px;
 
-$font-size__header__menu:       $font-size_small;
+$font-size__header__menu:       15px;
 $font-size__header__button:     $font-size_small;
 
 $font-size__content__text:      $font-size_medium;
@@ -30,6 +30,8 @@ $font-size__form__input:        $font-size_medium;
 $font-size__button_small:       $font-size_small;
 $font-size__button_middle:      20px;
 
+$font-size__footer:             $font-size_small;
+
 //Font color
 $font-color__header__menu:      $gray-dark;
 $font-color__content__text:     $gray-dark;
@@ -38,6 +40,8 @@ $font-color__page_title:        $blue-dark;
 $font-color__section__title:    $blue-dark;
 
 $font-color__form_input:        $blue-dark;
+
+$font-color__footer:            #7E8183;
 
 //Line heights
 $line-height__content__text:    1.5;

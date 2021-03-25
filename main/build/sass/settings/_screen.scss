@@ -1,9 +1,6 @@
-$breakpoints: (
-    largest: 1680,
-    hd: 1580,
-    desktop: 1440,
-    big: 1200,
-    ipad: 1024,
-    tablet: 961,
-    mobile: 640
-)
+$breakpoint_desktop:    1200px;
+$breakpoint_ipad:       1024px;
+$breakpoint_tablet:     768px;
+$breakpoint_mobile:     640px;
+$breakpoint_mobile_sm:  540px;
+

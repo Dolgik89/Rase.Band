@@ -1,6 +1,6 @@
-$header__left-gutter: 30px;
+$header__gutter_left: 30px;
 .header {
-	flex: 0 0 88px;
+	flex: 0 0 auto;
 	width: 100%;
 	padding: 26px 0;
 	background: $white;
@@ -9,14 +9,24 @@ $header__left-gutter: 30px;
 	top: 0;
 	left: 0;
 	z-index: 99;
+	@media screen and (max-width: $breakpoint_tablet) {
+		padding: 22px 0;
+	}
 	&__inner {
 		display: flex;
 		margin: 0 auto;
-		padding: 0 10px;
+		padding: 0 $padding__content;
 		max-width: $max-width__content;
 		justify-content: space-between;
 		align-items: center;
+		@media screen and (max-width: $breakpoint_ipad) {
+			padding: 0 $padding__content_tablet;
+		}
+		@media screen and (max-width: $breakpoint_mobile) {
+			padding: 0 $padding__content_mobile;
+		}
 	}
+	
 	//Logo
 	&__logo {
 		img {
@@ -25,21 +35,53 @@ $header__left-gutter: 30px;
 			height: auto;
 		}
 	}
+	
 	//Menu
 	&__menu {
 		display: flex;
 		margin-left: auto;
 		align-items: center;
+		justify-content: flex-end;
+		
+		//Mobile menu
+		@media screen and (max-width: $breakpoint_ipad) {
+			padding-bottom: 10px;
+			width: 280px;
+			max-width: 100%;
+			max-height: calc(100% - 78px);
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			box-shadow: $box-shadow_primary;
+			background: $white;
+			overflow: {
+				y: auto;
+				scrolling: touch;
+			}
+			opacity: 0;
+			transition: top $transition_speed, opacity 0s $transition_speed;
+			pointer-events: none;
+			position: fixed;
+			top: -200%;
+			right: 0;
+			z-index: 95;
+		}
+		@media screen and (max-width: $breakpoint_tablet) {
+			max-height: calc(100% - 70px);
+		}
+		
 		//Call button
 		&__call-button {
-			margin-left: $header__left-gutter;
+			margin-left: $header__gutter_left;
 			color: $font-color__header__menu;
 			white-space: nowrap;
+			text-decoration: none;
 			font: {
 				size: $font-size__header__menu;
 				weight: $font-weight_bold;
 			}
-			text-decoration: none;
+			@media screen and (max-width: $breakpoint_ipad) {
+				margin: 0 0 10px 20px;
+			}
 			&:hover {
 				text-decoration: underline;
 			}
@@ -53,15 +95,25 @@ $header__left-gutter: 30px;
 				vertical-align: middle;
 			}
 		}
+		
 		//Menu items
 		&__list {
 			display: flex;
-			margin-left: $header__left-gutter;
+			margin-left: $header__gutter_left;
+			@media screen and (max-width: $breakpoint_ipad) {
+				margin-left: 0;
+				width: 100%;
+				flex-flow: column nowrap;
+			}
 		}
 		&__item {
-			margin-left: $header__left-gutter/2;
+			margin-left: $header__gutter_left/2;
 			&:first-child {
 				margin-left: 0;
+			}
+			@media screen and (max-width: $breakpoint_ipad) {
+				margin: 0 0 10px 0;
+				padding: 0 20px;
 			}
 			a {
 				color: $font-color__header__menu;
@@ -73,13 +125,68 @@ $header__left-gutter: 30px;
 			}
 		}
 		.button {
-			margin-left: $header__left-gutter;
+			margin-left: $header__gutter_left;
+			@media screen and (max-width: $breakpoint_ipad) {
+				margin: 0 0 10px 20px;
+				&:last-child {
+					margin-left: 10px;
+				}
+			}
 		}
 	}
+	
+	//Mobile button
 	&__mobile-button {
 		display: none;
-		@media screen and (max-width: 1024px){
+		padding: 0;
+		flex: 0 0 30px;
+		width: 30px;
+		height: 15px;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		transition: transform $transition_speed;
+		&:before, &:after, span {
 			display: block;
+			width: 100%;
+			height: 3px;
+			background: $gray-dark;
+			border-radius: 2px;
+			transform-origin: 50% 50%;
+			transition: opacity $transition_speed, top $transition_speed, bottom $transition_speed, transform $transition_speed;
+		}
+		&:before, &:after {
+			content: '';
+		}
+		@media screen and (max-width: $breakpoint_ipad) {
+			display: flex;
+		}
+	}
+	
+	//Mobile menu opened
+	&_open {
+		.header__menu {
+			top: 78px;
+			opacity: 1;
+			transition: top $transition_speed, opacity 0s;
+			pointer-events: auto;
+			@media screen and (max-width: $breakpoint_tablet) {
+				top: 70px;
+			}
+		}
+		.header__mobile-button {
+			transform: rotate(360deg);
+			span { opacity: 0; }
+			&:before, &:after {
+				position: relative;
+			}
+			&:before {
+				top: 50%;
+				transform: translateY(-50%) rotate(-45deg);
+			}
+			&:after {
+				bottom: 50%;
+				transform: translateY(50%) rotate(45deg);
+			}
 		}
 	}
 }
