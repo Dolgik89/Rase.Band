@@ -1,4 +1,5 @@
 .section {
+	//Product sections
 	&_product {
 		
 		//Section main
@@ -24,7 +25,6 @@
 			@media screen and (max-width: $breakpoint-ipad) {
 				padding: 0 0 85px;
 			}
-			
 			@media screen and (max-width: $breakpoint-mobile) {
 				padding: 0 0 60px;
 			}
@@ -36,11 +36,9 @@
 					@media screen and (max-width: $breakpoint-ipad) {
 						margin-left: 0;
 					}
-					
 					@media screen and (max-width: $breakpoint-tablet) {
 						margin-left: calc((100vw - 95%)*-1);
 					}
-					
 					@media screen and (max-width: $breakpoint-mobile) {
 						max-width: 108vw;
 						min-width: 346px;
@@ -60,14 +58,11 @@
 						bottom: auto;
 						top: 50%;
 					}
-					
 					@media screen and (max-width: $breakpoint-mobile) {
 						transform: none;
 						position: relative;
 					}
 				}
-				
-				
 			}
 			
 			.section__about__text__inner {
@@ -103,6 +98,22 @@
 			
 			@media screen and (max-width: $breakpoint-ipad) {
 				padding: 0 0 40px;
+			}
+		}
+	}
+	
+	//Calculator section
+	&_calculator {
+		padding: 45px 0;
+		
+		@media screen and (max-width: $breakpoint-ipad) {
+			padding: 40px 0 70px;
+		}
+		
+		.section__inner {
+			
+			@media screen and (max-width: $breakpoint-ipad) {
+				padding: 0;
 			}
 		}
 	}

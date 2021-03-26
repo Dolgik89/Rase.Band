@@ -15,6 +15,10 @@
 		color: $gray;
 		appearance: none;
 		opacity: 0;
+		
+		&:focus {
+			border-color: $purple;
+		}
 	}
 	
 	&__button {

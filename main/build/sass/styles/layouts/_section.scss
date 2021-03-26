@@ -20,7 +20,35 @@
             margin-bottom: 0;
         }
     }
-  
+    
+    &__title {
+        margin-bottom: 16px;
+        color: $font-color__section__title;
+        font-size: $font-size__section__title;
+        font-weight: $font-weight_bold;
+        line-height: $line-height__title;
+        text-align: center;
+    
+        @media screen and (max-width: $breakpoint-ipad) {
+            margin-bottom: 10px;
+        }
+        
+        @media screen and (max-width: $breakpoint_mobile) {
+            font-size: $font-size__title_mobile;
+        }
+    }
+    
+    &__description {
+        margin: 0 auto 25px;
+        max-width: 580px;
+        text-align: center;
+    
+        @media screen and (max-width: $breakpoint-ipad) {
+            margin-bottom: 20px;
+            max-width: 690px;
+        }
+    }
+    
     &__about {
         display: flex;
         align-items: center;

@@ -19,7 +19,7 @@
         </div>
     </section>
     {# Watch section #}
-    <div class="section section_product_description">
+    <section class="section section_product_description">
         <div class="section__inner">
             <div class="section__about">
                 <div class="section__about__image">
@@ -37,12 +37,85 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     {# Calculator section #}
+    <section class="section section_calculator">
+        <div class="section__inner">
+            <div class="calculator">
+                <h2 class="section__title">Calculator</h2>
+                <p class="section__description">Nam libero tempore, cum soluta nobis est eligendi optio</p>
+                <form action="" id="calculator" method="post">
+                    <div class="calculator__form">
+                        <div class="calculator__form__body">
+
+                            <div class="calculator__form__col calculator__form__col_25">
+                                <select name="form[color]" class="calculator__form__control form-select">
+                                    <option value="">Color</option>
+                                    <option value="red">Red</option>
+                                    <option value="green">Green</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="orange">Orange</option>
+                                </select>
+                            </div>
+
+                            <div class="calculator__form__col calculator__form__col_25">
+                                <select name="form[size]" class="calculator__form__control form-select">
+                                    <option value="">Size</option>
+                                    <option value="100">100%</option>
+                                    <option value="150">150%</option>
+                                    <option value="250">250%</option>
+                                </select>
+                            </div>
+
+                            <div class="calculator__form__col calculator__form__col_25">
+                                <div class="calculator__form__control number-control">
+                                    <span class="number-control__button number-control__button_minus"></span>
+                                    <input type="text" name="form[quantity]" value="100" readonly />
+                                    <span class="number-control__button number-control__button_plus"></span>
+                                </div>
+                            </div>
+
+                            <div class="calculator__form__col calculator__form__col_25">
+                                <input type="text" name="form[date]" class="calculator__form__control" readonly>
+                            </div>
+
+                            <div class="calculator__form__col calculator__form__col_50">
+                                <select name="form[city]" class="calculator__form__control form-select">
+                                    <option value="">City</option>
+                                    <option value="kyiv">Kyiv</option>
+                                    <option value="odessa">Odessa</option>
+                                    <option value="rivne">Rivne</option>
+                                    <option value="lviv">Lviv</option>
+                                </select>
+                            </div>
+
+                            <div class="calculator__form__col calculator__form__col_50">
+                                <select name="form[city]" class="calculator__form__control form-select">
+                                    <option value="">Delivery</option>
+                                    <option value="new_post">New Post</option>
+                                    <option value="urkposhta">Urkposhta</option>
+                                    <option value="pickup">Pickup</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="calculator__form__footer">
+                            <div class="calculator__form__col calculator__form__col_100">
+                                <input type="text" name="form[total]" value="$ 56.25" readonly />
+                            </div>
+                            <div class="calculator__form__col calculator__form__col_100">
+                                <button class="button button_size_middle button_color_primary button_width_full">Proceed</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     {# How it works section #}
     {# Review section #}
     {# Benefits section #}
-    <div class="section section_product_benefits">
+    <section class="section section_product_benefits">
         <div class="section__inner">
             <div class="section__about">
                 <div class="section__about__text">
@@ -59,10 +132,10 @@
         <div class="section__inner section__inner_small">
             {% include '../common.blocks/_tabs.njk' %}
         </div>
-    </div>
+    </section>
 
     {# Scopes section #}
-    <div class="section section_product_scopes">
+    <section class="section section_product_scopes">
         <div class="section__inner">
             <div class="section__about">
                 <div class="section__about__image section__about__image_first">
@@ -82,10 +155,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     {# Info section #}
-    <div class="section section_product_info">
+    <section class="section section_product_info">
         <div class="section__inner">
             <div class="section__about">
                 <div class="section__about__text section__about__text_last">
@@ -114,5 +187,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>
