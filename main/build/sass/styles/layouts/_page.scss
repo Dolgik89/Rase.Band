@@ -1,0 +1,16 @@
+.page {
+	
+	&__title {
+		margin-bottom: 0.5em;
+		font-family: $font-family__content__title;
+		font-size: $font-size__page__title;
+		font-weight: $font-weight_bold;
+		color: $font-color__page__title;
+		line-height: $line-height__title;
+		
+		@media screen and (max-width: $breakpoint_mobile) {
+			font-size: $font-size__title_mobile;
+		}
+		
+	}
+}

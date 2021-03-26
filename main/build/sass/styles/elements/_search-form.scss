@@ -2,25 +2,21 @@
 	position: relative;
 	width: 20px;
 	transition: width $transition_speed;
+	
 	$parent_class: &;
 	&__input {
 		padding: 0;
 		width: 100%;
 		height: 35px;
-		border: {
-			width: 1px;
-			style: solid;
-			color: rgba(#052953, 0.16);
-			radius: $border-radius_standard;
-		}
-		font: {
-			family: $font-family__content__text;
-			size: $font-size__header__menu;
-		};
+		border: 1px solid rgba(#052953, 0.16);
+		border-radius: $border-radius_standard;
+		font-family: $font-family__content__text;
+		font-size: $font-size__header__menu;
 		color: $gray;
 		appearance: none;
 		opacity: 0;
 	}
+	
 	&__button {
 		padding: 0;
 		width: 20px;
@@ -33,14 +29,17 @@
 		top: 50%;
 		left: 0;
 	}
+	
 	@media screen and (min-width: $breakpoint_ipad + 1) {
 		&_focus {
 			width: 180px;
+			
 			@at-root & #{$parent_class}__input {
 				transition: opacity $transition_speed, padding $transition_speed;
 				padding: 0 5px 0 32px;
 				opacity: 1;
 			}
+			
 			@at-root & #{$parent_class}__button {
 				left: 8px;
 			}
@@ -52,10 +51,12 @@
 		padding: 10px;
 		width: 100%;
 		background: $gray-light;
+		
 		&__input {
 			padding: 0 10px 0 32px;
 			opacity: 1;
 		}
+		
 		&__button {
 			left: 18px;
 		}

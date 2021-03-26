@@ -5,7 +5,7 @@ var gcmq            = require('gulp-group-css-media-queries');
 var clear           = require('gulp-minify-css');
 var uglify          = require('gulp-uglify');
 var concat          = require('gulp-concat');
-var nunjucks = require('gulp-nunjucks');
+var nunjucks        = require('gulp-nunjucks');
 var $ = {
     gutil: require('gulp-util'),
     size: require('gulp-size')
@@ -44,7 +44,7 @@ gulp.task('sass', function(done){
 });
 
 gulp.task('bundleJS', function (done) {
-    gulp.src(paths.js.build + '/**/*.js')
+    gulp.src([paths.js.build + '/tom-select.complete.min.js', paths.js.build + '/script.js'])
         .pipe(concat('bundle.min.js'))
         .pipe(gulp.dest(paths.js.source))
         .pipe(uglify())

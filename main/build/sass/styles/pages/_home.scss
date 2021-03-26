@@ -1,0 +1,109 @@
+.section {
+	&_product {
+		
+		//Section main
+		&_main {
+			padding: 120px 0;
+			
+			.section__about__text__inner {
+				margin-bottom: 30px;
+			}
+			
+			@media screen and (max-width: $breakpoint-ipad) {
+				padding: 85px 0 100px;
+			}
+			@media screen and (max-width: $breakpoint-mobile) {
+				padding: 50px 0;
+			}
+		}
+		
+		//Section description
+		&_description {
+			padding: 0 0 140px;
+			
+			@media screen and (max-width: $breakpoint-ipad) {
+				padding: 0 0 85px;
+			}
+			
+			@media screen and (max-width: $breakpoint-mobile) {
+				padding: 0 0 60px;
+			}
+			
+			.section__about__image {
+				
+				img {
+					
+					@media screen and (max-width: $breakpoint-ipad) {
+						margin-left: 0;
+					}
+					
+					@media screen and (max-width: $breakpoint-tablet) {
+						margin-left: calc((100vw - 95%)*-1);
+					}
+					
+					@media screen and (max-width: $breakpoint-mobile) {
+						max-width: 108vw;
+						min-width: 346px;
+						margin-left: 0;
+						margin-bottom: calc((100vw - 80%)*-1);
+					}
+				}
+				
+				.notice {
+					position: absolute;
+					right: 88px;
+					bottom: -14px;
+					
+					@media screen and (max-width: $breakpoint-ipad) {
+						transform: translateY(-50%);
+						right: 0;
+						bottom: auto;
+						top: 50%;
+					}
+					
+					@media screen and (max-width: $breakpoint-mobile) {
+						transform: none;
+						position: relative;
+					}
+				}
+				
+				
+			}
+			
+			.section__about__text__inner {
+				margin-bottom: 20px;
+			}
+		}
+		
+		//Section benefits
+		&_benefits {
+			padding: 0 0 126px;
+			
+			@media screen and (max-width: $breakpoint-ipad) {
+				padding: 0 0 40px;
+			}
+			@media screen and (max-width: $breakpoint-mobile) {
+				padding: 0 0 50px;
+			}
+		}
+		
+		//Section scopes
+		&_scopes {
+			padding: 28px 0;
+			
+			@media screen and (max-width: $breakpoint-ipad) {
+				padding: 0 0 55px;
+			}
+			
+		}
+		
+		//Section info
+		&_info {
+			padding: 53px 0 27px;
+			
+			@media screen and (max-width: $breakpoint-ipad) {
+				padding: 0 0 40px;
+			}
+		}
+	}
+}

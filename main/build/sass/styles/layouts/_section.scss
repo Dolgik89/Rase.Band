@@ -1,0 +1,166 @@
+.section {
+    
+    &__inner {
+        margin: 0 auto 28px;
+        padding: 0 $padding__content;
+        max-width: $max-width__content;
+    
+        @media screen and (max-width: $breakpoint_ipad) {
+            padding: 0 $padding__content_tablet;
+        }
+        @media screen and (max-width: $breakpoint_mobile) {
+            padding: 0 $padding__content_mobile;
+        }
+    
+        &_small {
+            max-width: $max-width__content - 200;
+        }
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+  
+    &__about {
+        display: flex;
+        align-items: center;
+        
+        @media screen and (max-width: $breakpoint-ipad) {
+            flex-wrap: wrap;
+        }
+        
+        &__title {
+            margin-bottom: 20px;
+            color: $font-color__section__title;
+            font-size: $font-size__section__title;
+            font-weight: $font-weight_bold;
+            line-height: $line-height__title;
+    
+            @media screen and (max-width: $breakpoint_mobile) {
+                font-size: $font-size__title_mobile;
+            }
+        }
+        
+        &__text {
+            flex: 0 0 50%;
+            max-width: 50%;
+    
+            @media screen and (max-width: $breakpoint-ipad) {
+                margin-bottom: 30px;
+                flex: 0 0 100%;
+                max-width: 100%;
+                order: 1;
+            }
+            
+            &:first-child {
+                padding-right: 18px;
+    
+                @media screen and (max-width: $breakpoint-ipad) {
+                    padding: 0;
+                }
+            }
+    
+            &:last-child {
+                padding-left: 18px;
+    
+                @media screen and (max-width: $breakpoint-ipad) {
+                    padding: 0;
+                }
+            }
+            
+            &__inner {
+                
+                p {
+                    margin: 0 0 22px;
+                    
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+                
+                ul {
+                    
+                    li {
+                        margin-bottom: 20px;
+                        padding-left: 30px;
+                        position: relative;
+                        
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        
+                        &:before {
+                            content: '';
+                            display: block;
+                            width: 10px;
+                            height: 10px;
+                            background: $blue-dark;
+                            border-radius: 50%;
+                            position: absolute;
+                            left: 0;
+                            top: 8px;
+                        }
+                    }
+                }
+            }
+            
+            &_last {
+                @media screen and (max-width: $breakpoint-ipad) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        
+        &__image {
+            flex: 0 0 50%;
+            max-width: 50%;
+            display: flex;
+            position: relative;
+    
+            @media screen and (max-width: $breakpoint-ipad) {
+                flex: 0 0 100%;
+                max-width: 100%;
+                order: 2;
+            }
+            @media screen and (max-width: $breakpoint-mobile) {
+                display: block;
+            }
+            
+            &:first-child {
+                justify-content: flex-end;
+            }
+            
+            &:last-child {
+                justify-content: flex-start;
+            }
+            
+            img {
+                display: block;
+                
+                @media screen and (max-width: $breakpoint_desktop){
+                    margin: 0 auto;
+                    max-width: 100%;
+                }
+                @media screen and (max-width: $breakpoint-ipad) {
+                    max-width: 80%;
+                }
+                @media screen and (max-width: $breakpoint_mobile) {
+                    max-width: 100%;
+                }
+            }
+            
+            &_first {
+    
+                @media screen and (max-width: $breakpoint-ipad) {
+                    margin-bottom: 20px;
+                    order: 0;
+                }
+            }
+            
+            &.with-notice-image {
+                margin-bottom: 0;
+                justify-content: flex-start;
+            }
+        }
+    }
+}

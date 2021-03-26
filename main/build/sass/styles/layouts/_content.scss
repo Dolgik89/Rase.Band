@@ -1,14 +1,25 @@
 .content {
 	flex: 1 1 auto;
+	padding-top: 87px;
+	
+	@media screen and (max-width: $breakpoint_ipad) {
+		padding-top: 78px;
+	}
+	@media screen and (max-width: $breakpoint_tablet) {
+		padding-top: 70px;
+	}
+	
 	&__inner {
 		padding: 0 $padding__content;
 		margin: 0 auto;
 		max-width: $max-width__content;
+		
 		@media screen and (max-width: $breakpoint_ipad) {
 			padding: 0 $padding__content_tablet;
 		}
 		@media screen and (max-width: $breakpoint_mobile) {
 			padding: 0 $padding__content_mobile;
 		}
+		
 	}
 }
