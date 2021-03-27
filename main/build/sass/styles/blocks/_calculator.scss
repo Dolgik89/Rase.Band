@@ -10,6 +10,18 @@
 		padding: 24px 0 26px;
 	}
 	
+	.section__title {
+		@media screen and (max-width: $breakpoint_mobile) {
+			text-align: center;
+		}
+	}
+	
+	.section__description {
+		@media screen and (max-width: $breakpoint_mobile) {
+			text-align: center;
+		}
+	}
+	
 	&__form {
 		display: flex;
 		flex-wrap: wrap;

@@ -109,12 +109,43 @@
 		@media screen and (max-width: $breakpoint-ipad) {
 			padding: 40px 0 70px;
 		}
+		@media screen and (max-width: $breakpoint-mobile) {
+			padding: 0 0 40px;
+		}
 		
 		.section__inner {
 			
 			@media screen and (max-width: $breakpoint-ipad) {
 				padding: 0;
 			}
+		}
+	}
+	
+	//How it works section
+	&_how-it-works {
+		padding: 83px 0;
+		
+		@media screen and (max-width: $breakpoint-ipad) {
+			padding: 0 0 77px;
+		}
+		@media screen and (max-width: $breakpoint-mobile) {
+			padding: 0 0 40px;
+		}
+	}
+	
+	//Review section
+	&_review {
+		padding: 68px 0;
+		
+		@media screen and (max-width: $breakpoint-ipad) {
+			padding: 0 0 40px;
+		}
+		@media screen and (max-width: $breakpoint-mobile) {
+			padding: 0 0 68px;
+		}
+		
+		&.section__description {
+			margin-bottom: 20px;
 		}
 	}
 }

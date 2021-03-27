@@ -108,6 +108,7 @@ $lightpick-today-color: $purple;
 $lightpick-selected-range-background-color: $purple-light;
 
 .lightpick {
+	margin-top: 10px;
 	position: absolute;
 	z-index: 99999;
 	padding: 24px $lightpick-padding;

@@ -21,6 +21,15 @@
         }
     }
     
+    &__container {
+        margin: 0 auto;
+        max-width: $max-width__content - $padding__content*2;
+        
+        &_small {
+            max-width: $max-width__content - $padding__content*2 - 200;
+        }
+    }
+    
     &__title {
         margin-bottom: 16px;
         color: $font-color__section__title;
@@ -32,9 +41,20 @@
         @media screen and (max-width: $breakpoint-ipad) {
             margin-bottom: 10px;
         }
-        
         @media screen and (max-width: $breakpoint_mobile) {
             font-size: $font-size__title_mobile;
+            text-align: left;
+        }
+        
+        &_sub {
+            margin-bottom: 10px;
+            color: $font-color__section__title;
+            font-size: 22px;
+            font-weight: $font-weight_bold;
+            line-height: $line-height__title;
+        }
+        &_start {
+            text-align: left;
         }
     }
     
@@ -45,7 +65,10 @@
     
         @media screen and (max-width: $breakpoint-ipad) {
             margin-bottom: 20px;
-            max-width: 690px;
+            max-width: 640px;
+        }
+        @media screen and (max-width: $breakpoint_mobile) {
+            text-align: left;
         }
     }
     

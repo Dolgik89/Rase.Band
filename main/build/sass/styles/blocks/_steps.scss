@@ -1,0 +1,133 @@
+.steps-slider {
+	width: 100%;
+	overflow: hidden;
+	
+	&__nav {
+		display: flex;
+		margin-bottom: 40px;
+		padding: 0 100px;
+		counter-reset: step;
+		
+		@media screen and (max-width: $breakpoint-ipad) {
+			padding: 0 50px;
+		}
+		@media screen and (max-width: $breakpoint-mobile) {
+			padding: 0 0;
+		}
+		
+		&__item {
+			flex: 1 1 auto;
+			display: flex;
+			counter-increment: step;
+			pointer-events: none;
+			
+			&:before {
+				content: '';
+				display: block;
+				flex: 1 1 100%;
+				margin: 19px 0 0 4px;
+				height: 2px;
+				background: $blue-light;
+				border-radius: 1px;
+				transition: background-color $transition_speed;
+			}
+			
+			b {
+				flex: 0 0 40px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-left: 4px;
+				transition: all $transition_speed;
+				color: #BAD9E7;
+				font-size: $font-size_small;
+				line-height: 24px;
+				white-space: nowrap;
+				cursor: pointer;
+				pointer-events: all;
+				
+				@media screen and (max-width: $breakpoint-mobile) {
+					margin-left: 2px;
+					color: transparent;
+				}
+				
+				&:before {
+					content: counter(step);
+					margin-bottom: 10px;
+					display: block;
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					background: $blue-light;
+					color: #BAD9E7;
+					transition: all $transition_speed;
+					font-family: $font-family__content__title;
+					font-size: 24px;
+					font-weight: $font-weight_bold;
+					line-height: 46px;
+					text-align: center;
+					
+					@media screen and (max-width: $breakpoint-mobile) {
+						margin-bottom: 0;
+						margin-left: 2px;
+					}
+				}
+			}
+			
+			&:first-child {
+				flex: 0 0 40px;
+				
+				&:before {
+					display: none;
+				}
+				
+				b {
+					margin-left: 0;
+				}
+			}
+			
+			&.step-completed,
+			&.swiper-pagination-bullet-active {
+				
+				&:before {
+					background: $purple;
+				}
+				
+				b {
+					color: $purple;
+					
+					@media screen and (max-width: $breakpoint-mobile) {
+						color: transparent;
+					}
+					
+					&:before {
+						background: $purple-light;
+						color: $purple;
+					}
+				}
+			}
+			&.swiper-pagination-bullet-active {
+				
+				b {
+					@media screen and (max-width: $breakpoint-mobile) {
+						color: $purple;
+					}
+				}
+			}
+		}
+	}
+	
+	&__wrapper {
+		display: flex;
+		
+		&__slide {
+			flex: 0 0 100%;
+		}
+	}
+	
+	&.swiper-container-pointer-events {
+		.steps-slider__wrapper {
+			pointer-events: none;
+		}
+	}
+}

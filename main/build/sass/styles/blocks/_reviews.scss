@@ -1,0 +1,135 @@
+.reviews {
+	margin: -10px -10px 0;
+	padding: 10px 0 0;
+	overflow: hidden;
+	
+	&__wrapper {
+		display: flex;
+	}
+	
+	&__item {
+		flex: 0 0 auto;
+		margin: 0 10px;
+		padding: 33px 30px 31px;
+		display: flex;
+		width: 380px;
+		max-width: 100%;
+		min-height: 500px;
+		flex-direction: column;
+		background: $white;
+		box-shadow: $box-shadow_primary;
+		border-radius: 8px;
+	
+		
+		&__header {
+			flex: 0 0 46px;
+			margin-bottom: 35px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			&:before {
+				content: '';
+				display: block;
+				margin-left: 4px;
+				width: 38px;
+				height: 33px;
+				background: url(../images/review_quote.svg) no-repeat;
+			}
+		}
+		&__content {
+			flex: 1 1 auto;
+			
+			p {
+				font-style: italic;
+			}
+		}
+		&__fotter {
+			flex: 0 0 auto;
+			
+			
+		}
+	}
+	
+	&__rating {
+		display: flex;
+		align-items: center;
+		
+		&__points {
+			margin-right: 10px;
+		}
+		
+		&__stars {
+			display: flex;
+			
+			img {
+				display: block;
+				margin-right: 5px;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	
+	&__author {
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		
+		&__photo {
+			margin-right: 10px;
+			width: 24px;
+			height: 24px;
+			background: $blue-light url(../images/review_no-photo.svg) center center no-repeat;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		
+		&__info {
+			font-size: $font-size_small;
+			line-height: 24px;
+		}
+	}
+	
+	&__category {
+		font-size: $font-size_small;
+		line-height: 24px;
+	}
+	
+	&__pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		.swiper-pagination-bullet {
+			display: block;
+			margin: 0 7px;
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background: $blue-light;
+			cursor: pointer;
+			
+			&-active {
+				background: $blue;
+			}
+		}
+	}
+	
+	&__read-more {
+		margin: 30px 0 37px;
+		text-align: center;
+		a {
+			padding-bottom: 7px;
+			border-bottom: 2px dotted $purple;
+			font-family: $font-family__content__title;
+			font-size: $font-size_small;
+			font-weight: $font-weight_bold;
+			color: $purple;
+			text-decoration: none;
+			
+		}
+	}
+}

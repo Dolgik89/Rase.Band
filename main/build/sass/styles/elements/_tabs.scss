@@ -1,10 +1,30 @@
 .tabs {
-	margin-top: 20px;
+	margin-top: 25px;
 	display: flex;
+	
+	@media screen and (max-width: $breakpoint_ipad) {
+		flex-wrap: wrap;
+	}
+	@media screen and (max-width: $breakpoint_mobile) {
+		margin-top: 20px;
+	}
 	
 	//Nav
 	&__nav {
 		flex: 0 0 50%;
+		
+		@media screen and (max-width: $breakpoint_ipad) {
+			margin-bottom: 15px;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		
+		&__wrapper {
+			
+			@media screen and (max-width: $breakpoint_ipad) {
+				display: flex;
+			}
+		}
 		
 		&__item {
 			margin-bottom: 30px;
@@ -14,6 +34,13 @@
 			line-height: 23px;
 			position: relative;
 			cursor: pointer;
+			
+			@media screen and (max-width: $breakpoint_ipad) {
+				margin: 0 30px 0 0;
+				padding-left: 0;
+				font-size: $font-size_small;
+				white-space: nowrap;
+			}
 			
 			&:last-child {
 				margin-bottom: 0;
@@ -37,11 +64,19 @@
 				position: absolute;
 				left: 0;
 				top: 50%;
+				
+				@media screen and (max-width: $breakpoint_ipad) {
+					display: none;
+				}
 			}
 			
 			&_active {
 				font-weight: $font-weight_bold;
 				color: $purple;
+				
+				@media screen and (max-width: $breakpoint_ipad) {
+					font-size: $font-size__title_mobile;
+				}
 				
 				&:before {
 					transform: translateY(-50%) scale(2, 2);
@@ -54,6 +89,10 @@
 	//Content
 	&__content {
 		padding-left: 10px;
+		
+		@media screen and (max-width: $breakpoint_ipad) {
+			padding-left: 0;
+		}
 		
 		&__item {
 			display: none;

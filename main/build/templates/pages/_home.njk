@@ -114,7 +114,32 @@
         </div>
     </section>
     {# How it works section #}
+    <section class="section section_how-it-works">
+        <div class="section__inner section__inner_small">
+            <h2 class="section__title">How it works</h2>
+            <p class="section__description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="steps-slider">
+                <nav class="steps-slider__nav"></nav>
+                <div class="steps-slider__wrapper">
+                    {% for i in range(0, 4) %}
+                    <div class="steps-slider__wrapper__slide">
+                        <h3 class="section__title_sub">Step {{ i + 1 }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <h2 class="section__title section__title_start">Sed ut perspiciatis</h2>
+            {% include '../common.blocks/_tabs.njk' %}
+        </div>
+    </section>
     {# Review section #}
+    <section class="section section_review">
+        <div class="section__inner">
+            <h2 class="section__title">Reviews</h2>
+            <p class="section__description">Nam libero tempore, cum soluta nobis est </p>
+            {% include '../common.blocks/_reviews.njk' %}
+        </div>
+    </section>
     {# Benefits section #}
     <section class="section section_product_benefits">
         <div class="section__inner">

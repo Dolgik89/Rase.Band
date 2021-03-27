@@ -2,12 +2,16 @@
 
 //Elements
 @import "elements/buttons";
-@import "elements/search-form";
 @import "elements/lightpick";
 @import "elements/notice";
 @import "elements/tabs";
-@import "elements/calculator";
 @import "elements/dropdown";
+
+//block
+@import "blocks/search-form";
+@import "blocks/calculator";
+@import "blocks/steps";
+@import "blocks/reviews";
 
 //Layouts
 @import "layouts/body";

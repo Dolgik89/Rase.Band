@@ -1,9 +1,9 @@
 
 //Search form
-const search_form = document.querySelector('.search-form form')
-const search_input = search_form.querySelector('input')
+const searchForm = document.querySelector('.search-form form')
+const searchInput = searchForm.querySelector('input')
 
-search_form.addEventListener('submit', e => {
+searchForm.addEventListener('submit', e => {
     let parent = e.target.closest('.search-form')
 
     if ( parent.querySelector('input').value === '' ) {
@@ -12,7 +12,7 @@ search_form.addEventListener('submit', e => {
         parent.querySelector('input').focus()
     }
 })
-search_input.addEventListener('blur', e => {
+searchInput.addEventListener('blur', e => {
     if ( e.target.value === '' ) {
         let parent = e.target.closest('.search-form')
         parent.classList.remove('search-form_focus')
@@ -20,14 +20,14 @@ search_input.addEventListener('blur', e => {
 })
 
 //Menu
-const mobile_button = document.querySelector('.header__mobile-button')
-mobile_button.addEventListener('click', function (e) {
+const mobileButton = document.querySelector('.header__mobile-button')
+mobileButton.addEventListener('click', function (e) {
     e.target.closest('.header').classList.toggle('header_open')
 })
 
 //Footer dropdown
-let footer_dropdown = document.querySelector('.footer__dropdown')
-footer_dropdown.addEventListener('click', function(e) {
+let footerDropdown = document.querySelector('.footer__dropdown')
+footerDropdown.addEventListener('click', function(e) {
     e.stopPropagation();
 
     var target = e.target.closest('.footer__dropdown')
@@ -38,14 +38,14 @@ footer_dropdown.addEventListener('click', function(e) {
 
 //Document
 document.addEventListener('click', function(){
-    footer_dropdown.classList.remove('footer__dropdown_opened')
+    footerDropdown.classList.remove('footer__dropdown_opened')
 })
 
 
 //Tabs
-let tabs_block = document.querySelectorAll('.tabs')
+let tabsBlock = document.querySelectorAll('.tabs')
 
-tabs_block.forEach( tab => {
+tabsBlock.forEach( tab => {
     let tabs_nav_items = tab.querySelectorAll('.tabs .tabs__nav__item')
     let tabs_content_items = tab.querySelectorAll('.tabs .tabs__content__item')
 
@@ -85,22 +85,22 @@ document.querySelectorAll('.number-control').forEach(control => {
 
 //Form DatePicker
 document.querySelectorAll('.datepicker').forEach( datepicker => {
-    let datepicker_label;
+    let datepickerLabel;
     let picker = new Lightpick({
         field: datepicker,
         lang: 'en',
         startDate: new Date(),
         onSelect: date => {
-            datepicker_label.innerHTML = date.format('D MMM YYYY');
+            datepickerLabel.innerHTML = date.format('D MMM YYYY');
         },
         onClose: () => {
-            datepicker_label.innerHTML = picker.getStartDate().format('D MMM YYYY')
-            datepicker_label.classList.remove('calculator__form__control_focus')
+            datepickerLabel.innerHTML = picker.getStartDate().format('D MMM YYYY')
+            datepickerLabel.classList.remove('calculator__form__control_focus')
         },
         onOpen: () => {
             let parent = picker._opts.field.closest('.calculator__form__col')
-            datepicker_label = parent.querySelector('.calculator__form__control')
-            datepicker_label.classList.add('calculator__form__control_focus')
+            datepickerLabel = parent.querySelector('.calculator__form__control')
+            datepickerLabel.classList.add('calculator__form__control_focus')
         }
     });
     picker.show()
@@ -131,6 +131,99 @@ serialize = form => {
     form.querySelectorAll('[name]').forEach( e => {
         result[e.attributes.name.value] = e.value;
     })
-    return result;
+    return result
 }
 
+
+//How it works
+let stepsSwiper = []
+document.querySelectorAll('.steps-slider').forEach( (e, i) => {
+    stepsSwiper[i] = new Swiper(e, {
+        slidesPerView: 1,
+        pagination: {
+            el: e.querySelector('.steps-slider__nav'),
+            renderBullet: (index, className) => {
+                return '<span class="steps-slider__nav__item ' + className + '">' + '<b>Step ' + (index + 1) + '</b>' + '</span>';
+            },
+            clickable: true
+        },
+        wrapperClass: 'steps-slider__wrapper',
+        slideClass: 'steps-slider__wrapper__slide',
+        touchEventsTarget: 'wrapper',
+        touchMoveStopPropagation: true,
+        on: {
+            slideChange: swiper => {
+
+                for ( var slide = 0; slide < swiper.pagination.bullets.length; slide++ ) {
+                    if ( slide <= swiper.activeIndex ) {
+
+                        swiper.pagination.bullets[slide].classList.add('step-completed')
+                    } else {
+                        swiper.pagination.bullets[slide].classList.remove('step-completed')
+                    }
+                }
+            }
+        }
+    })
+})
+
+//Scroll blocks
+let scrollSwiper = []
+let scrollSwiperStarted = false;
+
+swiperScrollStart = () => {
+    document.querySelectorAll('.swiper-scroll').forEach( (e, i) => {
+        scrollSwiper[i] = new Swiper(e, {
+            slidesPerView: 'auto',
+            freeMode: true,
+            wrapperClass: 'tabs__nav__wrapper',
+            slideClass: 'tabs__nav__item',
+            resistanceRatio: 0,
+            mousewheel: {
+                eventsTarget: e.closest('.tabs')
+            }
+        })
+    })
+    scrollSwiperStarted = true;
+}
+
+swiperScrollStart()
+
+swiperScrollUpdate = () => {
+        if ( window.innerWidth > 1024 ) {
+            if (scrollSwiperStarted) {
+                scrollSwiper.forEach( swiper => {
+                    swiper.destroy(true, true)
+                })
+                scrollSwiperStarted = false;
+            }
+        } else {
+            if ( !scrollSwiperStarted )
+                swiperScrollStart()
+        }
+
+}
+
+swiperScrollUpdate()
+
+window.addEventListener('resize', () => {
+    swiperScrollUpdate()
+})
+
+
+//Reviews Swiper
+let reviewsSwiper = []
+document.querySelectorAll('.reviews').forEach( (block, index) => {
+    reviewsSwiper[index] = new Swiper(block, {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        // centeredSlidesBounds: true,
+        wrapperClass: 'reviews__wrapper',
+        slideClass: 'reviews__item',
+        pagination: {
+            el: block.querySelector('.reviews__pagination'),
+            clickable: true
+        }
+    })
+})
+console.log(reviewsSwiper);

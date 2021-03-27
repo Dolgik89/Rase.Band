@@ -48,6 +48,7 @@ gulp.task('bundleJS', function (done) {
         paths.js.build + '/moment.min.js',
         paths.js.build + '/lightpick.js',
         paths.js.build + '/tom-select.complete.min.js',
+        paths.js.build + '/swiper.min.js',
         paths.js.build + '/script.js'])
         .pipe(concat('bundle.min.js'))
         .pipe(gulp.dest(paths.js.source))
