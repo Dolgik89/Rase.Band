@@ -92,10 +92,25 @@ $lightpick-action-close-font-size: 18px !default;
 
 // Styles
 
+$lightpick-font: $font-family__content__text;
+$lightpick-line-height: $line-height__content__text;
+$lightpick-border-radius: $border-radius_standard;
+$lightpick-padding: 16px;
+$lightpick-color: $font-color__content__text;
+$lightpick-background-color: $gray-light;
+$lightpick-day-size: 36px;
+$lightpick-day-of-week-font-size: $font-size_small;
+$lightpick-day-font-size: $font-size_small;
+$lightpick-dropdown-font-size: $font-size__content__text;
+$lightpick-box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.05);
+$lightpick-day-disabled-opacity: 1;
+$lightpick-today-color: $purple;
+$lightpick-selected-range-background-color: $purple-light;
+
 .lightpick {
 	position: absolute;
 	z-index: 99999;
-	padding: $lightpick-padding;
+	padding: 24px $lightpick-padding;
 	border-radius: $lightpick-border-radius;
 	background-color: $lightpick-background-color;
 	box-shadow: $lightpick-box-shadow;
@@ -143,26 +158,23 @@ $lightpick-action-close-font-size: 18px !default;
 	}
 	
 	&__month {
-		padding: $lightpick-padding;
+		padding: 0;
 		width: ($lightpick-day-size * 7) + ($lightpick-padding * 2);
 		background-color: $lightpick-background-color;
 		
 		&-title-bar {
 			display: flex;
-			margin-bottom: $lightpick-padding;
+			margin-bottom: 10px;
 			justify-content: space-between;
 			align-items: center;
+			position: relative;
 		}
 		
 		&-title {
-			margin-top: $lightpick-padding;
-			margin-bottom: $lightpick-padding;
-			margin-left: $lightpick-padding;
 			font-size: $lightpick-title-font-size;
 			font-weight: $lightpick-title-font-weight;
 			line-height: $lightpick-title-font-size * 1.5;
 			cursor: default;
-			padding: 0 $lightpick-padding;
 			border-radius: $lightpick-border-radius;
 			
 			& > .lightpick__select {
@@ -172,6 +184,8 @@ $lightpick-action-close-font-size: 18px !default;
 				-moz-appearance: none;
 				-webkit-appearance: none;
 				appearance: none;
+				font-size: $lightpick-dropdown-font-size;
+				color: $font-color__section__title;
 				
 				&:disabled {
 					color: $lightpick-dropdown-disabled-color;
@@ -180,7 +194,6 @@ $lightpick-action-close-font-size: 18px !default;
 			
 			& > .lightpick__select-months {
 				font-weight: $lightpick-dropdown-font-weight;
-				font-size: $lightpick-dropdown-font-size;
 				margin-right: 0.5em;
 			}
 		}
@@ -188,8 +201,7 @@ $lightpick-action-close-font-size: 18px !default;
 	
 	&__toolbar {
 		display: flex;
-		text-align: right;
-		justify-content: flex-end;
+		justify-content: space-between;
 	}
 	
 	&__previous-action,
@@ -199,12 +211,19 @@ $lightpick-action-close-font-size: 18px !default;
 		margin-left: 6px;
 		width: $lightpick-action-width;
 		height: $lightpick-action-height;
+		line-height: $lightpick-action-height;
 		outline: none;
 		border: none;
-		border-radius: 50%;
-		background-color: $lightpick-action-background-color;
+		border-radius: 6px;
+		background-color: $purple;
+		color: $white;
 		justify-content: center;
 		align-items: center;
+		transition: box-shadow $transition_speed;
+		
+		&:hover {
+			box-shadow: $box-shadow_button;
+		}
 		
 		&:active {
 			color: inherit;
@@ -227,8 +246,9 @@ $lightpick-action-close-font-size: 18px !default;
 	
 	&__day-of-the-week {
 		display: flex;
-		font-size: $lightpick-day-of-week-font-size;
+		font-size: $lightpick-day-of-week-font-size - 1;
 		font-weight: $lightpick-day-of-week-font-weight;
+		color: $font-color__section__title;
 		justify-content: center;
 		align-items: center;
 	}
@@ -241,24 +261,18 @@ $lightpick-action-close-font-size: 18px !default;
 	&__day {
 		display: flex;
 		height: $lightpick-day-size;
-		background-position: center center;
-		background-size: contain;
-		background-repeat: no-repeat;
 		font-size: $lightpick-day-font-size;
+		border-radius: 6px;
 		justify-content: center;
 		align-items: center;
-		cursor: default;
+		cursor: pointer;
 		
 		&.is-today {
-			background-image: $lightpick-today-background-image;
-			background-size: 18.8% auto;
-			background-position: center bottom;
 			color: $lightpick-today-color;
 		}
 		
 		&:not(.is-disabled):hover {
-			background-size: contain;
-			background-image: $lightpick-day-hover-background-image;
+			background: darken($gray-light, 5%);
 		}
 		
 		&.is-disabled {
@@ -270,7 +284,6 @@ $lightpick-action-close-font-size: 18px !default;
 				
 				&:not(.is-start-date) {
 					background-color: $lightpick-selected-range-background-color;
-					background-image: none;
 				}
 			}
 		}
@@ -319,18 +332,15 @@ $lightpick-action-close-font-size: 18px !default;
 		}
 		
 		&.is-start-date.is-end-date {
-			background-color: transparent;
-			background-image: $lightpick-selected-date-background-image;
+		
 		}
 		
 		&.is-start-date,
 		&.is-end-date,
 		&.is-start-date:hover,
 		&.is-end-date:hover {
-			background-image: $lightpick-selected-date-background-image;
-			background-size: auto;
-			background-position: center;
-			color: $lightpick-selected-date-color;
+			background: $purple-light;
+			color: $purple;
 			font-weight: $lightpick-selected-date-font-weight;
 		}
 	}

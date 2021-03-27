@@ -44,7 +44,11 @@ gulp.task('sass', function(done){
 });
 
 gulp.task('bundleJS', function (done) {
-    gulp.src([paths.js.build + '/tom-select.complete.min.js', paths.js.build + '/script.js'])
+    gulp.src([
+        paths.js.build + '/moment.min.js',
+        paths.js.build + '/lightpick.js',
+        paths.js.build + '/tom-select.complete.min.js',
+        paths.js.build + '/script.js'])
         .pipe(concat('bundle.min.js'))
         .pipe(gulp.dest(paths.js.source))
         .pipe(uglify())

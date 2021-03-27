@@ -38,7 +38,7 @@
 			.calculator__form__col {
 				
 				@media screen and (max-width: $breakpoint_ipad) {
-					flex: 0 0 35%;
+					flex: 0 0 31%;
 				}
 				@media screen and (max-width: $breakpoint_mobile) {
 					flex: 0 0 100%;
@@ -49,6 +49,7 @@
 		&__col {
 			margin-bottom: 30px;
 			padding: 0 10px;
+			position: relative;
 			
 			@media screen and (max-width: $breakpoint_ipad) {
 				margin-bottom: 16px;
@@ -75,6 +76,7 @@
 		}
 		
 		&__control {
+			display: block;
 			padding: 0 20px;
 			width: 100%;
 			height: 50px;
@@ -92,14 +94,64 @@
 				box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.05);;
 			}
 			
-			&:focus {
+			&:focus,
+			&_focus {
 				border-color: $purple;
+			}
+			
+			&_datepicker {
+				display: flex;
+				padding: 0 5px;
+				justify-content: center;
+				align-items: center;
+				line-height: 50px;
+				text-align: center;
+				position: relative;
+				white-space: nowrap;
+				cursor: pointer;
+				z-index: 2;
+				
+				&:before {
+					content: '';
+					margin-right: 7px;
+					width: 12px;
+					height: 12px;
+					background: url(../images/icon_date.svg) no-repeat;
+				}
+				
+				& + input {
+					width: 100%;
+					height: 100%;
+					visibility: hidden;
+					opacity: 0;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+			
+			&_total {
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				height: 50px;
+				border: none;
+				background: none;
+				text-align: center;
+				font-family: $font-family__content__title;
+				font-size: 22px;
+				font-weight: $font-weight_bold;
+				color: $purple;
 			}
 			
 			&.form-select {
 				background-image: url(../images/arrow_form-select.svg);
 				background-repeat: no-repeat;
 				background-position: right 20px center;
+				
+				&[hidden="hidden"] {
+					display: none;
+				}
 			}
 		}
 		
@@ -130,7 +182,6 @@
 					content: '';
 					display: block;
 					width: 10px;
-					border: 1px solid $gray-light;
 					border-radius: 2px;
 					height: 1px;
 					background: $font-color__form_input;
@@ -148,12 +199,12 @@
 					}
 				}
 				
-				&_minus {
+				&.minus {
 					left: 0;
 					&:after { display: none; }
 				}
 				
-				&_plus {
+				&.plus {
 					right: 0;
 					&:after {
 						width: 1px;

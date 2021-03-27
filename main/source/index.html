@@ -102,7 +102,7 @@
                         <div class="calculator__form__body">
 
                             <div class="calculator__form__col calculator__form__col_25">
-                                <select name="form[color]" class="calculator__form__control form-select">
+                                <select name="color" class="calculator__form__control form-select">
                                     <option value="">Color</option>
                                     <option value="red">Red</option>
                                     <option value="green">Green</option>
@@ -112,7 +112,7 @@
                             </div>
 
                             <div class="calculator__form__col calculator__form__col_25">
-                                <select name="form[size]" class="calculator__form__control form-select">
+                                <select name="size" class="calculator__form__control form-select">
                                     <option value="">Size</option>
                                     <option value="100">100%</option>
                                     <option value="150">150%</option>
@@ -122,18 +122,19 @@
 
                             <div class="calculator__form__col calculator__form__col_25">
                                 <div class="calculator__form__control number-control">
-                                    <span class="number-control__button number-control__button_minus"></span>
-                                    <input type="text" name="form[quantity]" value="100" readonly />
-                                    <span class="number-control__button number-control__button_plus"></span>
+                                    <span class="number-control__button minus"></span>
+                                    <input type="text" name="quantity" value="100" readonly />
+                                    <span class="number-control__button plus"></span>
                                 </div>
                             </div>
 
                             <div class="calculator__form__col calculator__form__col_25">
-                                <input type="text" name="form[date]" class="calculator__form__control" readonly>
+                                <label for="datepicker" class="calculator__form__control calculator__form__control_datepicker"></label>
+                                <input type="text" name="date" class="datepicker" id="datepicker" readonly>
                             </div>
 
                             <div class="calculator__form__col calculator__form__col_50">
-                                <select name="form[city]" class="calculator__form__control form-select">
+                                <select name="city" class="calculator__form__control form-select">
                                     <option value="">City</option>
                                     <option value="kyiv">Kyiv</option>
                                     <option value="odessa">Odessa</option>
@@ -143,7 +144,7 @@
                             </div>
 
                             <div class="calculator__form__col calculator__form__col_50">
-                                <select name="form[city]" class="calculator__form__control form-select">
+                                <select name="delivery" class="calculator__form__control form-select">
                                     <option value="">Delivery</option>
                                     <option value="new_post">New Post</option>
                                     <option value="urkposhta">Urkposhta</option>
@@ -154,7 +155,7 @@
                         </div>
                         <div class="calculator__form__footer">
                             <div class="calculator__form__col calculator__form__col_100">
-                                <input type="text" name="form[total]" value="$ 56.25" readonly />
+                                <input type="text" name="total" class="calculator__form__control_total" value="$ 56.25" readonly />
                             </div>
                             <div class="calculator__form__col calculator__form__col_100">
                                 <button class="button button_size_middle button_color_primary button_width_full">Proceed</button>

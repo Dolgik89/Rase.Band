@@ -65,16 +65,72 @@ tabs_block.forEach( tab => {
                     tabs_content_items[content_item_index].classList.remove('tabs__content__item_active')
                 }
             })
-
         })
     })
-
 })
 
+//Forms
 
-//Chosen
-// new TomSelect(".chosen-select",{
-//     allowEmptyOption: true,
-//     copyClassesToDropdown: false,
-//     searchField: false
-// });
+//Form input number
+document.querySelectorAll('.number-control').forEach(control => {
+
+    control.addEventListener('click', e => {
+        let input = control.querySelector('input')
+        if( e.target.classList.contains('number-control__button') ) {
+            let operation = e.target.classList.contains('minus') ? -1 : 1;
+            input.value = +input.value + operation
+        }
+    })
+})
+
+//Form DatePicker
+document.querySelectorAll('.datepicker').forEach( datepicker => {
+    let datepicker_label;
+    let picker = new Lightpick({
+        field: datepicker,
+        lang: 'en',
+        startDate: new Date(),
+        onSelect: date => {
+            datepicker_label.innerHTML = date.format('D MMM YYYY');
+        },
+        onClose: () => {
+            datepicker_label.innerHTML = picker.getStartDate().format('D MMM YYYY')
+            datepicker_label.classList.remove('calculator__form__control_focus')
+        },
+        onOpen: () => {
+            let parent = picker._opts.field.closest('.calculator__form__col')
+            datepicker_label = parent.querySelector('.calculator__form__control')
+            datepicker_label.classList.add('calculator__form__control_focus')
+        }
+    });
+    picker.show()
+    picker.hide()
+})
+
+//Form Chosen
+document.querySelectorAll('.form-select').forEach( select => {
+
+    new TomSelect(select,{
+        allowEmptyOption: true,
+        copyClassesToDropdown: false,
+        searchField: false
+    })
+})
+
+//Form Submit
+let calculator = document.querySelector('#calculator')
+calculator.addEventListener('submit', e => {
+    e.preventDefault()
+
+    let data = serialize(e.target)
+    console.log(data)
+})
+
+serialize = form => {
+    let result = {}
+    form.querySelectorAll('[name]').forEach( e => {
+        result[e.attributes.name.value] = e.value;
+    })
+    return result;
+}
+
