@@ -12,6 +12,7 @@ searchForm.addEventListener('submit', e => {
         parent.querySelector('input').focus()
     }
 })
+
 searchInput.addEventListener('blur', e => {
     if ( e.target.value === '' ) {
         let parent = e.target.closest('.search-form')
@@ -213,14 +214,19 @@ window.addEventListener('resize', () => {
 let reviewsSwiper = []
 document.querySelectorAll('.reviews').forEach( (block, index) => {
     reviewsSwiper[index] = new Swiper(block, {
+        initialSlide: 0,
         slidesPerView: 'auto',
         centeredSlides: true,
-        centeredSlidesBounds: true,
         wrapperClass: 'reviews__wrapper',
         slideClass: 'reviews__slide',
         pagination: {
             el: block.querySelector('.reviews__pagination'),
             clickable: true
+        },
+        breakpoints: {
+            1024: {
+                initialSlide: 1
+            }
         }
     })
 })

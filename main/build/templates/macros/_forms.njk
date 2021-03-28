@@ -1,0 +1,22 @@
+{% macro select(name, options) %}
+    <select name="{{ name }}" class="calculator__form__control form-select">
+        {% for value, text in options %}
+        <option value="{{ value }}">{{ text }}</option>
+        {% endfor %}
+    </select>
+{% endmacro %}
+
+{% macro number(name, value) %}
+    <div class="calculator__form__control number-control">
+        <span class="number-control__button minus"></span>
+        <input type="text" name="{{ name }}" value="{{ value }}" readonly />
+        <span class="number-control__button plus"></span>
+    </div>
+{% endmacro %}
+
+{% macro date(name, id, startDate) %}
+    <div class="datepicker-control">
+        <label for="{{ id }}" class="calculator__form__control calculator__form__control_datepicker"></label>
+        <input type="text" name="{{ name }}" class="datepicker" id="{{ id }}" value="{{ startDate }}" readonly>
+    </div>
+{% endmacro %}

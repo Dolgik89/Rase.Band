@@ -1,0 +1,173 @@
+{
+    "data": {
+        "options": {
+            "header": {
+                "title": "Product",
+                "logo": "images/logo.svg",
+                "menu": [
+                    ["About", "#"],
+                    ["Product", "#"],
+                    ["FAQ", "#"],
+                    ["Contact", "#"]
+                ]
+            },
+            "footer": {
+                "rating": "4.5",
+                "menu": [
+                    ["About", "#"],
+                    ["Product", "#"],
+                    ["FAQ", "#"],
+                    ["Contact", "#"],
+                    ["Blog", "#"],
+                    ["How it works", "#"],
+                    ["Clients", "#"],
+                    ["Reviews", "#"]
+                ],
+                "dropdown": [
+                    ["Geld-Zurück-Garantie", "#"],
+                    ["Datenschutzerklärung", "#"],
+                    ["Revisionen", "#"],
+                    ["Rabattpolitik", "#"]
+                ],
+                "social": [
+                    ["facebook", "#"],
+                    ["instagram", "#"],
+                    ["youtube", "#"],
+                    ["pinterest", "#"]
+                ]
+            }
+        },
+        "about": {
+            "_main": {
+                "content": {
+                    "title": "At vero eos et accusamus et iusto odio dignissimos ducimus",
+                    "text": "<p>Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.<br> Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. </p>"
+                },
+                "image": {
+                    "src": "image_iMac.png",
+                    "alt": "iMac"
+                },
+                "button": {
+                    "size": "middle",
+                    "width": "long",
+                    "text": "Try for free"
+                }
+            },
+            "_description": {
+                "content": {
+                    "title": "Temporibus autem quibusdam et aut officiis debitis",
+                    "text": "<p>At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>"
+                },
+                "image": {
+                    "src": "image_Watch.png",
+                    "alt": "Watch"
+                },
+                "notice": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                "button": {
+                    "size": "middle",
+                    "width": "short",
+                    "text": "Try for free"
+                }
+            },
+            "_benefits": {
+                "content": {
+                    "title": "Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit",
+                    "text": "<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. </p>"
+                },
+                "image": {
+                    "src": "image_Terminal.png",
+                    "alt": "Terminal"
+                }
+            },
+            "_scopes": {
+                "content": {
+                    "title": "At vero eos et accusamus",
+                    "text": "<ul><li>Sed ut perspiciatis, unde omnis iste natus error.</li><li>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.</li><li>Dsed quia non numquam eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.</li><li>Quam nihil molestiae consequatur.</li><li>At vero eos et accusamus et iusto odio dignissimos ducimus.</li></ul>"
+                },
+                "image": {
+                    "src": "image_Headphones.png",
+                    "alt": "Headphones"
+                }
+            },
+            "_info": {
+                "content": {
+                    "title": "Temporibus autem quibusdam et aut officiis debitis ",
+                    "text": "<p>At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est.</p>"
+                },
+                "image": {
+                    "src": "image_Folders.png",
+                    "alt": "Info"
+                }
+            },
+            "_with_notice_image": {
+                "content": {
+                    "text": "<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus.</p>"
+                },
+                "notice": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            }
+        },
+        "tabs": {
+            "how_it_works": {
+                "nav": ["Nemo enim", "Die ipsam voluptatem", "Ut enim ad minima", "Quis autem vel", "Sed ut perspiciatis"],
+                "content": [
+                    "<p>Nemo enim ipsam voluptatem, quia voluptas sit</p><p><b>1.</b> Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium</p><p><b>2.</b> Doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p><p><b>3.</b> Fet enim ad minima veniam, quis nostrum exercitationem ullam corporis </p><p><b>Notice:</b><br>Dolorem ipsum, quia dolor sit amet consectetu</p>",
+                    "<p><b>Die ipsam voluptatem</b>, quia voluptas sit</p><p><b>1.</b> Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium</p><p><b>2.</b> Doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p><p><b>3.</b> Fet enim ad minima veniam, quis nostrum exercitationem ullam corporis </p><p><b>Notice:</b><br>Die ipsam voluptatem ipsum, quia dolor sit amet consectetu</p>",
+                    "<p><b>Ut enim ad minima</b>, quia voluptas sit</p><p><b>1.</b> Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium</p><p><b>2.</b> Doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p><p><b>3.</b> Fet enim ad minima veniam, quis nostrum exercitationem ullam corporis </p><p><b>Notice:</b><br>Ut enim ad minima ipsum, quia dolor sit amet consectetu</p>",
+                    "<p><b>Quis autem vel</b>, quia voluptas sit</p><p><b>1.</b> Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium</p><p><b>2.</b> Doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p><p><b>3.</b> Fet enim ad minima veniam, quis nostrum exercitationem ullam corporis </p><p><b>Notice:</b><br>Quis autem vel ipsum, quia dolor sit amet consectetu</p>",
+                    "<p><b>Sed ut perspiciatis</b>, quia voluptas sit</p><p><b>1.</b> Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium</p><p><b>2.</b> Doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p><p><b>3.</b> Fet enim ad minima veniam, quis nostrum exercitationem ullam corporis </p><p><b>Notice:</b><br>Sed ut perspiciatis ipsum, quia dolor sit amet consectetu</p>"
+                ]
+            },
+            "info": {
+                "nav": ["Temporibus autem", "Nam libero", "Et harum"],
+                "content": [
+                    "<p>At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, </p>",
+                    "<p><b>Nam libero</b> At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, </p>",
+                    "<p><b>Et harum</b> At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, </p>"
+                ]
+            }
+        },
+        "faq": [
+            ["At vero eos et accusamus et iusto odio?", "<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.</p>"],
+            ["Nemo enim ipsam voluertrhs?", "<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio.Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio.</p><p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>"],
+            ["Nventore veritatis et quasi architecto beatae vitae dicta ?", "<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor.</p>"]
+        ],
+        "reviews": [
+            {
+                "rating": "5.0",
+                "comment": "Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam.",
+                "authorID": 21015,
+                "category": "Category",
+                "subCategory": "Subcategory"
+            },
+            {
+                "rating": "5.0",
+                "comment": "Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam.",
+                "authorID": 21014,
+                "category": "Category",
+                "subCategory": "Subcategory"
+            },
+            {
+                "rating": "5.0",
+                "comment": "Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam.",
+                "authorID": 21013,
+                "category": "Category",
+                "subCategory": "Subcategory"
+            },
+            {
+                "rating": "5.0",
+                "comment": "Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam.",
+                "authorID": 21012,
+                "category": "Category",
+                "subCategory": "Subcategory"
+            },
+            {
+                "rating": "5.0",
+                "comment": "Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam.",
+                "authorID": 21011,
+                "category": "Category",
+                "subCategory": "Subcategory"
+            }
+
+        ]
+    }
+}

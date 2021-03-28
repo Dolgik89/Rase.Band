@@ -20,6 +20,7 @@
 	&__inner {
 		display: flex;
 		margin: auto;
+		max-width: 1017px;
 		background: $white;
 		border-radius: 35px;
 		box-shadow: $box-shadow_primary;
@@ -130,7 +131,7 @@
 		&:hover {
 			&:before,
 			&:after {
-				background: rgba($black, 0.6);
+				background: $black;
 			}
 		}
 	}

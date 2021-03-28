@@ -1,14 +1,16 @@
 .section {
     
     &__inner {
-        margin: 0 auto 28px;
+        margin: 0 auto 66px;
         padding: 0 $padding__content;
         max-width: $max-width__content;
     
         @media screen and (max-width: $breakpoint_ipad) {
+            margin-bottom: 38px;
             padding: 0 $padding__content_tablet;
         }
         @media screen and (max-width: $breakpoint_mobile) {
+            margin-bottom: 28px;
             padding: 0 $padding__content_mobile;
         }
     

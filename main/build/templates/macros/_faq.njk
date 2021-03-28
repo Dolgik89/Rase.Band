@@ -1,0 +1,10 @@
+{% macro list(list) %}
+    <div class="faq">
+        {% for question, answer in list %}
+        <div class="faq__item">
+            <h3 class="faq__item__title">{{ question }}</h3>
+            <div class="faq__item__content">{{ answer | safe }}</div>
+        </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

@@ -1,0 +1,7 @@
+{% macro page(text) %}
+    <h1 class="page__title">{{ text }}</h1>
+{% endmacro %}
+
+{% macro section(text, block, classes = '') %}
+    <h2 class="section{{ '__' + block }}__title {{ classes }}">{{ text }}</h2>
+{% endmacro %}

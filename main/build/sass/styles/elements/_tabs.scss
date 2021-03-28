@@ -14,9 +14,13 @@
 		flex: 0 0 50%;
 		
 		@media screen and (max-width: $breakpoint_ipad) {
-			margin-bottom: 15px;
+			margin-bottom: 25px;
 			flex: 0 0 100%;
 			max-width: 100%;
+		}
+		
+		@media screen and (max-width: $breakpoint_mobile) {
+			margin-bottom: 15px;
 		}
 		
 		&__wrapper {
@@ -102,7 +106,8 @@
 			}
 			
 			p {
-				margin-bottom: 22px;
+				margin-bottom: 20px;
+				font-size: $font-size_small;
 				
 				&:last-child {
 					margin-bottom: 0;

@@ -1,6 +1,7 @@
 .ts-control {
 	background-image: none;
 	position: relative;
+	cursor: default;
 	
 	&:not(.input-hidden) {
 		border-color: $purple;

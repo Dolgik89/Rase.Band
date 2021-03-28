@@ -15,7 +15,7 @@
 		padding: 60px 0 50px;
 	}
 	@media screen and (max-width: $breakpoint_mobile) {
-		padding: 35px 0 0;
+		padding: 35px 0 24px;
 	}
 	
 	&__inner {
@@ -252,12 +252,18 @@
 		width: 174px;
 		justify-content: space-between;
 		
+		&__item {
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);;
+		}
+		
 		img {
 			filter: grayscale(1);
-			transition: filter $transition_speed;
+			transition: filter $transition_speed, opacity $transition_speed;
+			opacity: 0.5;
 			
 			&:hover {
 				filter: grayscale(0);
+				opacity: 1;
 			}
 		}
 	}

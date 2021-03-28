@@ -4,7 +4,7 @@
 		
 		//Section main
 		&_main {
-			padding: 120px 0;
+			padding: 111px 0 100px;
 			
 			.section__about__text__inner {
 				margin-bottom: 30px;
@@ -14,7 +14,7 @@
 				padding: 85px 0 100px;
 			}
 			@media screen and (max-width: $breakpoint-mobile) {
-				padding: 50px 0;
+				padding: 50px 0 47px;
 			}
 		}
 		
@@ -23,7 +23,7 @@
 			padding: 0 0 140px;
 			
 			@media screen and (max-width: $breakpoint-ipad) {
-				padding: 0 0 85px;
+				padding: 0 0 45px;
 			}
 			@media screen and (max-width: $breakpoint-mobile) {
 				padding: 0 0 60px;
@@ -72,13 +72,13 @@
 		
 		//Section benefits
 		&_benefits {
-			padding: 0 0 126px;
+			padding: 0 0 97px;
 			
 			@media screen and (max-width: $breakpoint-ipad) {
 				padding: 0 0 40px;
 			}
 			@media screen and (max-width: $breakpoint-mobile) {
-				padding: 0 0 50px;
+				padding: 0 0 49px;
 			}
 		}
 		
@@ -135,13 +135,18 @@
 	
 	//Review section
 	&_review {
-		padding: 68px 0;
+		padding: 68px 0 51px;
 		
 		@media screen and (max-width: $breakpoint-ipad) {
-			padding: 0 0 40px;
+			padding: 0 0 78px;
 		}
 		@media screen and (max-width: $breakpoint-mobile) {
 			padding: 0 0 68px;
+		}
+		
+		.section__inner {
+			padding: 0 10px;
+			max-width: $max-width__content - 20;
 		}
 		
 		&.section__description {
@@ -157,7 +162,7 @@
 			padding: 0 0 100px;
 		}
 		@media screen and (max-width: $breakpoint-mobile) {
-			padding: 0 0 60px;
+			padding: 0 0 66px;
 		}
 		
 		.section__title {

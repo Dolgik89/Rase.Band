@@ -8,44 +8,35 @@
             </div>
             <div class="footer__rating">
                 <div class="footer__rating__stars">
+                    {% set rating = data.options.footer.rating %}
+                    {% for point in range(0, rating | int) %}
                     <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star star_half"></span>{# star_empty class for dis star #}
+                    {% endfor %}
+                    {% if (5 - rating) != 0 %}
+                        {% set rest = 5 - rating %}
+                        {% if (rest % 1) == 0.5 %}<span class="star star_half"></span>{% endif %}
+                        {% for point in range(0, rest | int) %}
+                            <span class="star star_empty"></span>
+                        {% endfor %}
+                    {% endif %}
                 </div>
-                <div class="footer__rating__points">4,5<span>/</span>5</div>
+                <div class="footer__rating__points">{{ rating | replace('.', ',') }}<span>/</span>5</div>
             </div>
             <div class="footer__dropdown">
                 <span class="footer__dropdown__placeholder">Info</span>
                 <ul class="footer__dropdown__list">
-                    <li class="footer__dropdown__list__item">
-                        <a href="#">Geld-Zurück-Garantie</a>
-                    </li>
-                    <li class="footer__dropdown__list__item">
-                        <a href="#">Datenschutzerklärung</a>
-                    </li>
-                    <li class="footer__dropdown__list__item">
-                        <a href="#">Revisionen</a>
-                    </li>
-                    <li class="footer__dropdown__list__item">
-                        <a href="#">Rabattpolitik</a>
-                    </li>
+                    {% set dropdown = data.options.footer.dropdown %}
+                    {% for item, link in dropdown %}
+                        <li class="footer__dropdown__list__item">
+                            <a href="{{ link }}">{{item}}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
         <nav class="footer__col footer__col__menu">
 {# --------------- Footer menu ---------------- #}
-            {% set footer_menu = [
-                ['About', '#'],
-                ['Product', '#'],
-                ['FAQ', '#'],
-                ['Contact', '#'],
-                ['Blog', '#'],
-                ['How it works', '#'],
-                ['Clients', '#'],
-                ['Reviews', '#']
-            ] %}
+            {% set footer_menu = data.options.footer.menu %}
             <ul class="footer__menu">
                 {% for page, link in footer_menu %}
                 <li class="footer__menu__item"><a href="{{ link }}">{{ page }}</a></li>
@@ -55,12 +46,7 @@
 {# --------------- Social menu ---------------- #}
         <div class="footer__col footer__col__social">
             <ul class="footer__social-links">
-                {% set social_networks = [
-                    ['facebook', '#'],
-                    ['instagram', '#'],
-                    ['youtube', '#'],
-                    ['pinterest', '#']
-                ] %}
+                {% set social_networks = data.options.footer.social %}
                 {% for name, link in social_networks %}
                 <li class="footer__social-links__item">
                     <a href="{{ link }}"><img src="images/social_{{ name }}.svg" alt="{{ name | capitalize }}"></a>

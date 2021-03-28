@@ -1,116 +1,37 @@
-
+    {% import '../macros/_about_template.njk' as template %}
+    {% import '../macros/_title.njk' as title %}
+    {% import '../macros/_notice.njk' as notice %}
+    {% import '../macros/_tabs.njk' as block %}
+    {% import '../macros/_faq.njk' as faq %}
+    {% import '../macros/_reviews.njk' as comments %}
 <div class="content">
+
     {# Main section #}
     <section class="section section_product_main">
         <div class="section__inner">
-            <div class="section__about">
-                <div class="section__about__text">
-                    <h1 class="page__title">At vero eos et accusamus et iusto odio dignissimos ducimus</h1>
-                    <article class="section__about__text__inner">
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                            <br> Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. </p>
-                    </article>
-                    <a href="#" class="button button_size_middle button_width_long button_color_primary button_width_long">Try for free</a>
-                </div>
-                <div class="section__about__image">
-                    <img src="images/image_iMac.png" alt="iMac">
-                </div>
-            </div>
+            {{ template.about(
+                data.about._main,
+                title.page(data.about._main.content.title)
+            ) }}
         </div>
     </section>
+
     {# Watch section #}
     <section class="section section_product_description">
         <div class="section__inner">
-            <div class="section__about">
-                <div class="section__about__image">
-                    <img src="images/image_Watch.png" alt="Watch">
-                    <div class="notice">
-                        <h3 class="notice__title">Notice</h3>
-                        <p class="notice__text">Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est.</p>
-                    </div>
-                </div>
-                <div class="section__about__text">
-                    <h2 class="section__about__title">Temporibus autem quibusdam et aut officiis debitis</h2>
-                    <article class="section__about__text__inner">
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                    </article>
-                </div>
-            </div>
+            {{ template.about(
+                data.about._description,
+                title.section(data.about._description.content.title, 'about'),
+                true,
+                false,
+                notice.text(data.about._description.notice)
+            ) }}
         </div>
     </section>
     {# Calculator section #}
     <section class="section section_calculator">
         <div class="section__inner">
-            <div class="calculator">
-                <h2 class="section__title">Calculator</h2>
-                <p class="section__description">Nam libero tempore, cum soluta nobis est eligendi optio</p>
-                <form action="" id="calculator" method="post">
-                    <div class="calculator__form">
-                        <div class="calculator__form__body">
-
-                            <div class="calculator__form__col calculator__form__col_25">
-                                <select name="color" class="calculator__form__control form-select">
-                                    <option value="">Color</option>
-                                    <option value="red">Red</option>
-                                    <option value="green">Green</option>
-                                    <option value="blue">Blue</option>
-                                    <option value="orange">Orange</option>
-                                </select>
-                            </div>
-
-                            <div class="calculator__form__col calculator__form__col_25">
-                                <select name="size" class="calculator__form__control form-select">
-                                    <option value="">Size</option>
-                                    <option value="100">100%</option>
-                                    <option value="150">150%</option>
-                                    <option value="250">250%</option>
-                                </select>
-                            </div>
-
-                            <div class="calculator__form__col calculator__form__col_25">
-                                <div class="calculator__form__control number-control">
-                                    <span class="number-control__button minus"></span>
-                                    <input type="text" name="quantity" value="100" readonly />
-                                    <span class="number-control__button plus"></span>
-                                </div>
-                            </div>
-
-                            <div class="calculator__form__col calculator__form__col_25">
-                                <label for="datepicker" class="calculator__form__control calculator__form__control_datepicker"></label>
-                                <input type="text" name="date" class="datepicker" id="datepicker" readonly>
-                            </div>
-
-                            <div class="calculator__form__col calculator__form__col_50">
-                                <select name="city" class="calculator__form__control form-select">
-                                    <option value="">City</option>
-                                    <option value="kyiv">Kyiv</option>
-                                    <option value="odessa">Odessa</option>
-                                    <option value="rivne">Rivne</option>
-                                    <option value="lviv">Lviv</option>
-                                </select>
-                            </div>
-
-                            <div class="calculator__form__col calculator__form__col_50">
-                                <select name="delivery" class="calculator__form__control form-select">
-                                    <option value="">Delivery</option>
-                                    <option value="new_post">New Post</option>
-                                    <option value="urkposhta">Urkposhta</option>
-                                    <option value="pickup">Pickup</option>
-                                </select>
-                            </div>
-
-                        </div>
-                        <div class="calculator__form__footer">
-                            <div class="calculator__form__col calculator__form__col_100">
-                                <input type="text" name="total" class="calculator__form__control_total" value="$ 56.25" readonly />
-                            </div>
-                            <div class="calculator__form__col calculator__form__col_100">
-                                <button class="button button_size_middle button_color_primary button_width_full">Proceed</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            {% include '../common.blocks/_calculator.njk' %}
         </div>
     </section>
     {# How it works section #}
@@ -129,7 +50,7 @@
                 </div>
             </div>
             <h2 class="section__title section__title_start">Sed ut perspiciatis</h2>
-            {% include '../common.blocks/_tabs.njk' %}
+            {{ block.tabs(data.tabs.how_it_works) }}
         </div>
     </section>
     {# Review section #}
@@ -137,81 +58,53 @@
         <div class="section__inner">
             <h2 class="section__title">Reviews</h2>
             <p class="section__description">Nam libero tempore, cum soluta nobis est </p>
-            {% include '../common.blocks/_reviews.njk' %}
+            {{ comments.reviews(data.reviews) }}
         </div>
     </section>
     {# Benefits section #}
     <section class="section section_product_benefits">
         <div class="section__inner">
-            <div class="section__about">
-                <div class="section__about__text">
-                    <h2 class="section__about__title">Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit</h2>
-                    <article class="section__about__text__inner">
-                        <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. </p>
-                    </article>
-                </div>
-                <div class="section__about__image">
-                    <img src="images/image_Terminal.png" alt="Terminal">
-                </div>
-            </div>
+            {{ template.about(
+                data.about._benefits,
+                title.section(data.about._benefits.content.title, 'about')
+            ) }}
         </div>
         <div class="section__inner section__inner_small">
-            {% include '../common.blocks/_tabs.njk' %}
+            {{ block.tabs(data.tabs.info) }}
         </div>
     </section>
 
     {# Scopes section #}
     <section class="section section_product_scopes">
         <div class="section__inner">
-            <div class="section__about">
-                <div class="section__about__image section__about__image_first">
-                    <img src="images/image_Headphones.png" alt="Headphones">
-                </div>
-                <div class="section__about__text section__about__text_last">
-                    <h2 class="section__about__title">At vero eos et accusamus</h2>
-                    <article class="section__about__text__inner">
-                        <ul>
-                            <li>Sed ut perspiciatis, unde omnis iste natus error.</li>
-                            <li>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.</li>
-                            <li>Dsed quia non numquam eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.</li>
-                            <li>Quam nihil molestiae consequatur.</li>
-                            <li>At vero eos et accusamus et iusto odio dignissimos ducimus.</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
+            {{ template.about(
+                data.about._scopes,
+                title.section(data.about._scopes.content.title, 'about'),
+                true,
+                true
+            ) }}
         </div>
     </section>
 
     {# Info section #}
     <section class="section section_product_info">
         <div class="section__inner">
-            <div class="section__about">
-                <div class="section__about__text section__about__text_last">
-                    <h2 class="section__about__title">Temporibus autem quibusdam et aut officiis debitis </h2>
-                    <article class="section__about__text__inner">
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est.</p>
-                    </article>
-                </div>
-                <div class="section__about__image section__about__image_first">
-                    <img src="images/image_Folders.png" alt="Info">
-                </div>
-            </div>
+            {{ template.about(
+                data.about._info,
+                title.section(data.about._info.content.title, 'about'),
+                false,
+                true
+            ) }}
         </div>
         <div class="section__inner">
-            <div class="section__about">
-                <div class="section__about__image section__about__image_first with-notice-image">
-                    <div class="notice_image">
-                        <div class="notice">
-                            <h3 class="notice__title">Notice</h3>
-                            <p class="notice__text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="section__about__text section__about__text_last">
-                    <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus.</p>
-                </div>
-            </div>
+            {{ template.about(
+                data.about._with_notice_image,
+                '',
+                true,
+                true,
+                notice.text(data.about._with_notice_image.notice),
+                true
+            ) }}
         </div>
     </section>
 
@@ -219,27 +112,7 @@
     <section class="section section_faq">
         <div class="section__inner section__inner_middle">
             <h2 class="section__title section__title_start">FAQ</h2>
-            <div class="faq">
-                <div class="faq__item">
-                    <h3 class="faq__item__title">At vero eos et accusamus et iusto odio?</h3>
-                    <div class="faq__item__content">
-                        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <h3 class="faq__item__title">Nemo enim ipsam voluertrhs?</h3>
-                    <div class="faq__item__content">
-                        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio.Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio.</p>
-                        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <h3 class="faq__item__title">Nventore veritatis et quasi architecto beatae vitae dicta ?</h3>
-                    <div class="faq__item__content">
-                        <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor.</p>
-                    </div>
-                </div>
-            </div>
+            {{ faq.list(data.faq) }}
             <div class="section_center">
                 <a href="#" class="button button_size_big button_width_short button_color_primary">Try for free</a>
             </div>

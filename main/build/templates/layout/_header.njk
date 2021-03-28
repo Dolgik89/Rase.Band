@@ -1,17 +1,12 @@
 <header class="header">
     <div class="header__inner">
         <a href="#" class="header__logo">
-            <img src="images/logo.svg" alt="Product">
+            <img src="{{ data.options.header.logo }}" alt="{{ data.options.header.title }}">
         </a>
         <nav class="header__menu">
             {% include '../common.blocks/_search-form.njk' %}
             <a href="#" class="header__menu__call-button" data-popup="popup_contacts_us">Call us</a>
-            {% set header_menu = [
-                ['About', '#'],
-                ['Product', '#'],
-                ['FAQ', '#'],
-                ['Contact', '#']
-            ] %}
+            {% set header_menu = data.options.header.menu %}
             <ul class="header__menu__list">
                 {% for page, link in header_menu %}
                 <li class="header__menu__item">

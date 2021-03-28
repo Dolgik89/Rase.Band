@@ -1,0 +1,16 @@
+{% macro tabs(data) %}
+    <div class="tabs">
+        <div class="tabs__nav swiper-scroll">
+            <div class="tabs__nav__wrapper">
+                {% for item in data.nav %}
+                <div class="tabs__nav__item {% if not loop.index %}tabs__nav__item_active{% endif %}">{{ item }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="tabs__content">
+            {% for text in data.content %}
+                <div class="tabs__content__item {% if loop.first %}tabs__content__item_active{% endif %}">{{ text | safe }}</div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}

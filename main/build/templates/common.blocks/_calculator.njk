@@ -1,0 +1,69 @@
+{% import '../macros/_forms.njk' as field %}
+<div class="calculator">
+    <h2 class="section__title">Calculator</h2>
+    <p class="section__description">Nam libero tempore, cum soluta nobis est eligendi optio</p>
+    <form action="" id="calculator" method="post">
+        <div class="calculator__form">
+            <div class="calculator__form__body">
+
+                <div class="calculator__form__col calculator__form__col_25">
+                    {% set colorOptions = [
+                        ['', 'Color'],
+                        ['red', 'Red'],
+                        ['blue', 'Blue'],
+                        ['orange', 'Orange']
+                    ] %}
+                    {{ field.select('color', colorOptions) }}
+                </div>
+
+                <div class="calculator__form__col calculator__form__col_25">
+                    {% set sizeOptions = [
+                        ['', 'Size'],
+                        ['100', '100%'],
+                        ['150', '150%'],
+                        ['250', '250%']
+                    ] %}
+                    {{ field.select('size', sizeOptions) }}
+                </div>
+
+                <div class="calculator__form__col calculator__form__col_25">
+                    {{ field.number('quantity', 100) }}
+                </div>
+
+                <div class="calculator__form__col calculator__form__col_25">
+                    {{ field.date('date', 'datepicker') }}
+                </div>
+
+                <div class="calculator__form__col calculator__form__col_50">
+                    {% set cityOptions = [
+                        ['', 'City'],
+                        ['kyiv', 'Kyiv'],
+                        ['odessa', 'Odessa'],
+                        ['rivne', 'Rivne'],
+                        ['lviv', 'Lviv']
+                    ] %}
+                    {{ field.select('city', cityOptions) }}
+                </div>
+
+                <div class="calculator__form__col calculator__form__col_50">
+                    {% set deliveryOptions = [
+                        ['', 'Delivery'],
+                        ['new_post', 'New Post'],
+                        ['urkposhta', 'Urkposhta'],
+                        ['pickup', 'Pickup']
+                    ] %}
+                    {{ field.select('delivery', deliveryOptions) }}
+                </div>
+
+            </div>
+            <div class="calculator__form__footer">
+                <div class="calculator__form__col calculator__form__col_100">
+                    <input type="text" name="total" class="calculator__form__control_total" value="$ 56.25" readonly />
+                </div>
+                <div class="calculator__form__col calculator__form__col_100">
+                    <button class="button button_size_middle button_color_primary button_width_full">Proceed</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
