@@ -34,10 +34,8 @@ footerDropdown.addEventListener('click', function(e) {
     target.classList.toggle('footer__dropdown_opened')
 })
 
-
-
 //Document
-document.addEventListener('click', function(){
+document.addEventListener('click', () => {
     footerDropdown.classList.remove('footer__dropdown_opened')
 })
 
@@ -235,3 +233,37 @@ for ( let i = 0; i < faqItemTitle.length; i++ ) {
         e.target.parentElement.classList.toggle('faq__item_open')
     })
 }
+
+//Popup
+openPopup = popup_id => {
+    let popup = document.getElementById(popup_id)
+    popup.classList.add('popup_show')
+}
+
+closePopup = () => {
+    document.querySelectorAll('.popup').forEach( popup => {
+        popup.classList.remove('popup_show')
+    })
+}
+
+document.querySelectorAll('[data-popup]').forEach(button => {
+
+    button.addEventListener('click', e => {
+        e.preventDefault()
+        let popup_id = e.target.dataset.popup
+        openPopup(popup_id)
+    })
+
+})
+
+//Document
+document.querySelectorAll('.popup, .popup__close').forEach(popup => {
+    popup.addEventListener('click', e => {
+        closePopup()
+    })
+})
+document.querySelectorAll('.popup__inner').forEach(inner => {
+    inner.addEventListener('click', e => {
+        e.stopPropagation()
+    })
+})

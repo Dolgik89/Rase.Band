@@ -1,0 +1,45 @@
+.contact-form {
+	
+	&__body {
+		margin-bottom: 22px;
+	}
+	
+	&__control {
+		display: block;
+		margin-bottom: 9px;
+		padding: 0 20px;
+		width: 100%;
+		max-width: 253px;
+		height: 50px;
+		border: 1px solid $white;
+		border-radius: $border-radius_standard;
+		box-shadow: 0 0 1px #052953;
+		font-family: $font-family__content__text;
+		font-size: $font-size__content__text;
+		color: $gray;
+		appearance: none;
+		
+		@media screen and (max-width: $breakpoint_mobile_sm) {
+			max-width: 100%;
+		}
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&:focus {
+			box-shadow: none;
+			border-color: $purple;
+		}
+	}
+	
+	&__footer {
+		
+		.button {
+			
+			@media screen and (max-width: $breakpoint_mobile_sm) {
+				width: 100%;
+			}
+		}
+	}
+}
