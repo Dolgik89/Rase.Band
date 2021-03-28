@@ -8,6 +8,7 @@ var concat          = require('gulp-concat');
 var nunjucks        = require('gulp-nunjucks');
 var data            = require('gulp-data');
 var fs              = require('fs');
+var format_html     = require('gulp-diffable-html')
 var $ = {
     gutil: require('gulp-util'),
     size: require('gulp-size')
@@ -61,14 +62,17 @@ gulp.task('bundleJS', function (done) {
 
 gulp.task('nunjucks', function(done){
     gulp.src(paths.templates.njk + '/**/[^_]*.njk')
-        .pipe(data(function() {
-            return JSON.parse(fs.readFileSync('data.json'));
-        }))
+        .pipe(
+            data(function() {
+                return JSON.parse(fs.readFileSync('data.json'));
+            })
+        )
         .pipe(
             nunjucks.compile({
                 autoescape: false
             })
         )
+        .pipe(format_html())
         .pipe(gulp.dest(paths.templates.html));
     done();
 })
