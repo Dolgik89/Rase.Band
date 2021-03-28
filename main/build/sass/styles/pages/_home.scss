@@ -148,4 +148,28 @@
 			margin-bottom: 20px;
 		}
 	}
+	
+	//FAQ section
+	&_faq {
+		padding: 88px 0;
+		
+		@media screen and (max-width: $breakpoint-ipad) {
+			padding: 0 0 100px;
+		}
+		@media screen and (max-width: $breakpoint-mobile) {
+			padding: 0 0 60px;
+		}
+		
+		.section__title {
+			margin-bottom: 30px;
+			
+			@media screen and (max-width: $breakpoint-ipad) {
+				margin-bottom: 60px;
+				text-align: center;
+			}
+			@media screen and (max-width: $breakpoint-ipad) {
+				margin-bottom: 30px;
+			}
+		}
+	}
 }

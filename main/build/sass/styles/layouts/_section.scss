@@ -16,17 +16,12 @@
             max-width: $max-width__content - 200;
         }
         
+        &_middle {
+            max-width: 1084px;
+        }
+        
         &:last-child {
             margin-bottom: 0;
-        }
-    }
-    
-    &__container {
-        margin: 0 auto;
-        max-width: $max-width__content - $padding__content*2;
-        
-        &_small {
-            max-width: $max-width__content - $padding__content*2 - 200;
         }
     }
     
@@ -213,5 +208,8 @@
                 justify-content: flex-start;
             }
         }
+    }
+    &_center {
+        text-align: center;
     }
 }

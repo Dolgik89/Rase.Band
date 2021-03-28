@@ -217,13 +217,21 @@ document.querySelectorAll('.reviews').forEach( (block, index) => {
     reviewsSwiper[index] = new Swiper(block, {
         slidesPerView: 'auto',
         centeredSlides: true,
-        // centeredSlidesBounds: true,
+        centeredSlidesBounds: true,
         wrapperClass: 'reviews__wrapper',
-        slideClass: 'reviews__item',
+        slideClass: 'reviews__slide',
         pagination: {
             el: block.querySelector('.reviews__pagination'),
             clickable: true
         }
     })
 })
-console.log(reviewsSwiper);
+
+//FAQ
+let faqItemTitle = document.querySelectorAll('.faq__item__title')
+
+for ( let i = 0; i < faqItemTitle.length; i++ ) {
+    faqItemTitle[i].addEventListener('click', function (e){
+        e.target.parentElement.classList.toggle('faq__item_open')
+    })
+}

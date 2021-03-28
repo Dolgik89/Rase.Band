@@ -1,0 +1,134 @@
+.faq {
+	margin-bottom: 56px;
+	
+	@media screen and (max-width: $breakpoint-ipad) {
+		margin-bottom: 30px;
+	}
+	
+	&__item {
+		margin-bottom: 20px;
+		padding: 20px;
+		background: $white;
+		box-shadow: $box-shadow_primary;
+		border-radius: $border-radius_medium;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&__title {
+			padding-right: 20px;
+			display: block;
+			font-family: $font-family__content__title;
+			font-size: 22px;
+			font-weight: $font-weight_bold;
+			color: $font-color__section__title;
+			line-height: 1.365;
+			cursor: pointer;
+			position: relative;
+			
+			@media screen and (max-width: $breakpoint-mobile) {
+				font-size: $font-size_medium;
+				line-height: $font-size_medium;
+			}
+			
+			&:after {
+				content: '';
+				display: block;
+				margin-top: -4px;
+				width: 16px;
+				height: 8px;
+				background: url(../images/arrow_form-select.svg) center center/16px 8px no-repeat;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				
+				@media screen and (max-width: $breakpoint-mobile) {
+					margin-top: -3px;
+					width: 10px;
+					height: 6px;
+					background-size: 10px 6px;
+				}
+			}
+		}
+		
+		&__content {
+			display: none;
+			
+			@media screen and (max-width: $breakpoint-mobile) {
+				line-height: 1.34;
+			}
+			
+			p {
+				margin-bottom: 14px;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			
+			b, strong {
+				font-weight: $font-weight_bold;
+			}
+			
+			em, i {
+				font-style: italic;
+			}
+			
+			ul, ol {
+				margin: 0 0 14px;
+				padding-left: 40px;
+				
+				li {
+					margin-bottom: 10px;
+					
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			
+			ul {
+				list-style: disc outside;
+			}
+			
+			ol {
+				list-style: decimal outside;
+			}
+		}
+		
+		&_open {
+			
+			.faq__item__title {
+				margin-bottom: 29px;
+				
+				@media screen and (max-width: $breakpoint-mobile) {
+					margin-bottom: 21px;
+				}
+				
+				&:after {
+					transform: rotate(180deg);
+				}
+				
+				&:before {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 1px;
+					background: #F0F4FD;
+					position: absolute;
+					left: 0;
+					bottom: -15px;
+					
+					@media screen and (max-width: $breakpoint-mobile) {
+						bottom: -11px;
+					}
+				}
+			}
+			
+			.faq__item__content {
+				display: block;
+			}
+		}
+	}
+}

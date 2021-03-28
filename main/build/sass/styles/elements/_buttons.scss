@@ -29,6 +29,15 @@
 				line-height:52px;
 			}
 		}
+		
+		&_big {
+			height: 62px;
+			font-size: $font-size__button_middle;
+			
+			&:not(button):not([type="submit"]) {
+				line-height:62px;
+			}
+		}
 	}
 	
 	&_width {
